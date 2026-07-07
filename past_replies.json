@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "context": "A client requested an update on the status of a product feature that was scheduled for release this month.",
+    "incoming_subject": "Checking in on Feature Release Timeline",
+    "reply": "Hi John,\n\nThanks for reaching out. The feature is currently in the final testing phase and remains on track for release later this month. We're completing a few validation checks to ensure a smooth rollout.\n\nI'll share another update as soon as testing is complete.\n\nBest,\nRahul"
+  },
+  {
+    "id": 2,
+    "context": "A customer reported difficulty accessing their account after a password reset.",
+    "incoming_subject": "Unable to Log In After Password Reset",
+    "reply": "Hi Sarah,\n\nI'm sorry you're experiencing this issue. We've reviewed your account and everything appears active on our end.\n\nCould you please try clearing your browser cache and using the password reset link once more? If the issue persists, let me know and I'll investigate further.\n\nKind regards,\nSarah"
+  },
+  {
+    "id": 3,
+    "context": "An engineering team member requested clarification about project priorities for the upcoming sprint.",
+    "incoming_subject": "Sprint Priorities for Next Week",
+    "reply": "Hi Alex,\n\nFor the upcoming sprint, our primary focus is completing the API integration work and addressing the remaining high-priority bugs.\n\nSecondary tasks can be picked up once those objectives are on track. Let me know if you'd like to review the backlog together.\n\nRegards,\nDavid"
+  },
+  {
+    "id": 4,
+    "context": "A recruiter invited the recipient for a technical interview.",
+    "incoming_subject": "Interview Invitation for Software Engineer Role",
+    "reply": "Hello,\n\nThank you for the invitation. I appreciate the opportunity to move forward in the process.\n\nI am available on Tuesday and Wednesday afternoon next week and would be happy to attend the interview at a time that works best for your team.\n\nLooking forward to speaking with you.\n\nBest regards,\nPragya"
+  },
+  {
+    "id": 5,
+    "context": "A vendor asked whether the contract renewal would proceed this quarter.",
+    "incoming_subject": "Contract Renewal Status",
+    "reply": "Hi Michael,\n\nThank you for checking in. We are currently reviewing the renewal internally and expect to finalize our decision within the next two weeks.\n\nI'll keep you informed as soon as we have confirmation.\n\nBest,\nRahul"
+  }
+]
+
+

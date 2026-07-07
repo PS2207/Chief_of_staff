@@ -1,0 +1,40 @@
+thread_id,sender,subject,snippet,date,priority,category,reason
+thread-001,Arjun (Engineering Lead),PRODUCTION DOWN — API rate limiting causing 503 errors,"Hotfix deployed. 503 errors dropped to zero within 2 minutes of rollback. I'll schedule a proper root-cause analysis for this afternoon.
+
+Thanks for the quick sign-off.
+
+- Arjun",2026-06-23 09:45,urgent,production,The email reports a production issue that has been resolved but may require further attention or review.
+thread-002,Meera (VP Product),Q3 Roadmap — Request for your input,"Good question — include it under tech debt for now. Platform team will have their own section but I want to see the full picture in one place.
+
+Looking forward to your notes.
+
+- Meera",2026-06-23 10:00,needs-reply,request,Meera expects a response with notes on the Q3 roadmap.
+thread-003,Anika (Design Lead),Weekly Standup Notes — June 23,"Hi everyone,
+
+Here are the standup notes for this week:
+
+**Done:**
+- Finalized onboarding flow v2 mockups
+- Completed usability testing (5 sessions, all passed)
+
+**In Progress:**
+- Design system component audit (60% done)
+- Handoff documentation for dev team
+
+**Blockers:**
+- None right now
+
+**Next W",2026-06-23 11:00,needs-reply,procurement,The sender expects a response regarding the free 30-day trial of the new AI-powered forecasting module.
+thread-004,Priya (Procurement),Contract Renewal — DataPulse Analytics Suite,"Thanks Rahul. I've drafted the response to David — will send it out today and CC you.
+
+One more thing: David asked if we'd be interested in a free 30-day trial of their new AI-powered forecasting module. Worth exploring?
+
+Let me know,
+Priya",2026-06-22 09:00,fyi,update,The email is an informational update about the weekly standup notes.
+thread-005,Kavya (Data Science Lead),Meeting Request: AI Feature Review — New Concepts,"Thursday 3 PM works. I'll send over a one-pager by Wednesday evening.
+
+On the churn model — it can work with our existing event data. No new integrations needed on day one. We might add CRM data later for improved accuracy but v1 is self-contained.
+
+See you Thursday!
+
+- Kavya",2026-06-23 10:45,fyi,newsletter,Detected newsletter/product announcement.

@@ -1,0 +1,10 @@
+.env
+credentials.json
+token.json
+
+# git init
+# git status
+# git add .
+# git commit -m "chief-of-staff application"
+# git remote origin
+# git push

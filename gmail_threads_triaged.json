@@ -1,0 +1,22 @@
+[
+    {
+        "gmail_thread_id": "19f3c6d30b7e5657",
+        "gmail_message_id": "19f3c6d30b7e5657",
+        "subject": "Urgent: Need to discuss about project",
+        "latest_sender": "P Sinha <psinhasinha481@gmail.com>",
+        "latest_date": "Tue, 7 Jul 2026 17:23:23 +0530",
+        "latest_snippet": "Hi, Need to discuss about priorities of current project. Let&#39;s meet in evening. Any time slot from 6PM 1ST to 9PM1ST works for me. Thanks",
+        "message_count": 1,
+        "messages": [
+            {
+                "messageId": "19f3c6d30b7e5657",
+                "from": "P Sinha <psinhasinha481@gmail.com>",
+                "date": "Tue, 7 Jul 2026 17:23:23 +0530",
+                "body": "Hi,\r\n\r\nNeed to discuss about priorities of current project. Let's meet in evening.\r\nAny time slot from 6PM 1ST to 9PM1ST works for me.\r\n\r\nThanks"
+            }
+        ],
+        "priority": "needs-reply",
+        "category": "meeting",
+        "reason": "Sender expects a response to schedule a meeting."
+    }
+]

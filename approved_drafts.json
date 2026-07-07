@@ -1,0 +1,474 @@
+[
+  {
+    "draft": "Hey Meera and Arjun,\n\nRegarding the cloud infrastructure scaling costs - they should be accounted for under vendor expenses, as they're a direct cost associated with our external providers. To clarify, here's how we should break it down:\n1. Headcount costs: salaries, benefits, etc.\n2. Vendor expenses: cloud infrastructure, contractors, etc.\n\nLet's make sure to include these in our projected spends by Friday. \n\nBest, Rahul",
+    "subject": "Q3 Budget Review",
+    "replying_to": "Arjun (Engineering)",
+    "model": "llama-3.3-70b-versatile",
+    "edited": false,
+    "approved_at": "2026-06-23T17:40:27.800889"
+  },
+  {
+    "draft": "*Draft generation failed: 'sign_off'*",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-06-28T17:37:58.504185"
+  },
+  {
+    "draft": "*Draft generation failed: 'sign_off'*",
+    "subject": "Q3 Roadmap \u2014 Request for your input",
+    "replying_to": "Meera (VP Product)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-06-28T17:38:24.040126"
+  },
+  {
+    "draft": "*Draft generation failed: 'sign_off'*",
+    "subject": "Weekly Standup Notes \u2014 June 23",
+    "replying_to": "Anika (Design Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-06-28T17:39:06.175672"
+  },
+  {
+    "draft": "*Draft generation failed: 'sign_off'*",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-06-29T13:48:00.150878"
+  },
+  {
+    "draft": "*Draft generation failed: 'sign_off'*",
+    "subject": "Q3 Roadmap \u2014 Request for your input",
+    "replying_to": "Meera (VP Product)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-06-29T13:48:05.725152"
+  },
+  {
+    "draft": "*Draft generation failed: 'sign_off'*",
+    "subject": "Weekly Standup Notes \u2014 June 23",
+    "replying_to": "Anika (Design Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-06-29T13:48:13.612839"
+  },
+  {
+    "draft": "*Draft generation failed: 'sign_off'*",
+    "subject": "Fable 5 is back in Devin.",
+    "replying_to": "Cognition Team <theo@cognition.ai>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-02T12:59:03.949277"
+  },
+  {
+    "draft": "Subject: Action Required: Sigstore vulnerability in CricketInformer\n\nHi Team,\n\nReceived the GitHub security advisory regarding a high-severity `sigstore` vulnerability in the `crickinformer-frontend` repository (GHSA-52v5-jr5w-gjxr).\nPlease assess this vulnerability and prioritize a remediation plan.\n\nShare an estimated fix timeline with me by end of day tomorrow.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "[PS2207] A security advisory on sigstore affects at least one of your repositories",
+    "replying_to": "GitHub <notifications@github.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-03T11:22:05.513368"
+  },
+  {
+    "draft": "Hi P,\n\nGot it. I will send the quotation to the client by noon today..\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Client waiting for response",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-03T11:27:02.229752"
+  },
+  {
+    "draft": "Hi P,\n\nI've sent the client quotation. You are on the CC.\nLet me know if you need anything else.\n\nBest,\nPragya\nsoftware engineer\nGoogle",
+    "subject": "Client waiting for response",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-03T13:02:45.880173"
+  },
+  {
+    "draft": "Hi Pragya,\n\nThanks for sending the client quotation.\nP, this confirms the quote is out. Let us know if the client needs anything further.\n\nBest,\nPragya\ngoogle",
+    "subject": "Client waiting for response",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-03T13:19:49.837950"
+  },
+  {
+    "draft": "Hi Arjun,\n\nGood to hear the hotfix resolved the 503 errors quickly.\n\nScheduling the RCA this afternoon is the right next step. Please share the findings and any proposed long-term solutions when it's complete.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-03T14:14:57.148529"
+  },
+  {
+    "draft": "Hi Arjun,\n\nGood to hear the hotfix resolved the 503 errors quickly.\nPlease share the RCA meeting invite with me. I want to understand the root cause and ensure we have a plan to prevent this going forward.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-03T14:16:57.731207"
+  },
+  {
+    "draft": "*Draft generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 47.404302092s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 47\n}\n]*",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-03T14:34:34.654320"
+  },
+  {
+    "draft": "*Draft generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 6.186912636s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 6\n}\n]*",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-03T14:37:02.315312"
+  },
+  {
+    "draft": "*Draft generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 12.718139321s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 12\n}\n]*",
+    "subject": "Client waiting for response",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-03T14:38:06.336889"
+  },
+  {
+    "draft": "*Draft generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 51.786350464s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 51\n}\n]*",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-03T14:49:16.580071"
+  },
+  {
+    "draft": "*Draft generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 14.778235291s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 14\n}\n]*",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-03T14:51:08.560842"
+  },
+  {
+    "draft": "*Draft generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 31.496291786s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 31\n}\n]*",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-03T15:01:37.818169"
+  },
+  {
+    "draft": "*Draft generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 27.702340111s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 27\n}\n]*",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-03T15:05:41.291652"
+  },
+  {
+    "draft": "Hi Arjun,\n\nGood to hear the hotfix resolved the production errors quickly. Thanks for handling that fast.\n\nPlease share the RCA schedule once it's set. I want to review the findings and ensure we capture all learnings from this incident.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-03T21:56:10.932617"
+  },
+  {
+    "draft": "*Draft generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 12.249758962s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 12\n}\n]*",
+    "subject": "Security alert",
+    "replying_to": "Google <no-reply@accounts.google.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-03T22:39:58.939805"
+  },
+  {
+    "draft": "Hi P Sinha,\n\nThanks for flagging the project priorities discussion. I'm available at 4 PM IST today. Please confirm if that time works for you to meet.\n\nBest,\nPragya\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Need to discuss about the current project.Let's meet",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-05T14:14:33.421451"
+  },
+  {
+    "draft": "Hi P Sinha,\n\nThanks for flagging the project priorities discussion. I'm available at 4 PM IST today. Please confirm if that time works for you to meet.\n\nBest,\nPragya\n",
+    "subject": "Need to discuss about the current project.Let's meet",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-05T14:16:30.233378"
+  },
+  {
+    "draft": "Hi Pragya,\n\nThanks for the 4 PM IST suggestion. That works for me.\nPlease send a calendar invite.\n\nBest,\nPragya",
+    "subject": "Need to discuss about the current project.Let's meet",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-05T15:16:54.213063"
+  },
+  {
+    "draft": "Hi P,\n\nThanks for proposing 4 PM IST. That works for me.\nI'll send a calendar invite shortly with the meeting link.\n\nBest,\npragya",
+    "subject": "Need to discuss about the current project.Let's meet",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-05T16:06:22.645043"
+  },
+  {
+    "draft": "Hi P,\n\nThanks for proposing 4 PM IST. That works for me.\nI'll send a calendar invite shortly with the meeting link.\n\nBest,\npragya",
+    "subject": "Need to discuss about the current project.Let's meet",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-05T16:08:37.308096"
+  },
+  {
+    "draft": "Subject: RE: Need to discuss about the current project.Let's meet\n\nHi P,\n\nGot your note on the priorities discussion. 4 PM IST works. I'll join.\n\nBest,\npragya",
+    "subject": "Need to discuss about the current project.Let's meet",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-05T16:22:59.508524"
+  },
+  {
+    "draft": "Hi P\n\n4 PM IST works for me. Please send a calendar invite.\n\nBest,\npragya",
+    "subject": "Need to discuss about the current project.Let's meet",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-05T17:50:57.633173"
+  },
+  {
+    "draft": "Hi Pragya,\n\nThanks for coordinating this. 4 PM IST works for me. Please send the meeting invite.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Need to discuss about the current project.Let's meet",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-05T18:02:22.687079"
+  },
+  {
+    "draft": "Subject: Re: Need to discuss about the current project.Let's meet\n\nHi Pragya,\n\nThanks for sharing your availability. 4 PM IST works for me today. Please send a calendar invite for the meeting.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Need to discuss about the current project.Let's meet",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-05T18:13:02.630186"
+  },
+  {
+    "draft": "Subject: Re: Need to discuss about the current project.Let's meet\n\nHi Pragya,\n\nI'll send the calendar invite for our 4 PM IST meeting today.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Need to discuss about the current project.Let's meet",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-05T18:16:19.033208"
+  },
+  {
+    "draft": "Hi Arjun,\n\nGood news on the 503s.\nConfirming we need a root-cause analysis for this. Please share the invite for this afternoon.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-06T15:00:06.742788"
+  },
+  {
+    "draft": "Subject: Re: Need to discuss about the current project.Let's meet\n\nHi P Sinha,\n\nThe meeting on project priorities is set for 4 PM IST today. Pragya will send the calendar invite.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Need to discuss about the current project.Let's meet",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-06T15:01:32.192579"
+  },
+  {
+    "draft": "*Draft generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 12.929332035s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 12\n}\n]*",
+    "subject": "Urgent: Needs to discuss about progect",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-06T18:08:56.747697"
+  },
+  {
+    "draft": "Hi Arjun,\n\nGood to hear the hotfix resolved the issue quickly.\n\nPlease send me an invite for the RCA this afternoon. I want to understand what led to this and how we prevent similar rate limiting issues moving forward.\n\nBest,\n\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "PRODUCTION DOWN \u2014 API rate limiting causing 503 errors",
+    "replying_to": "Arjun (Engineering Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-06T19:44:46.093530"
+  },
+  {
+    "draft": "Hi P,\n\nUnderstood on discussing project priorities.\nI can meet today at 4 PM IST or 6 PM IST.\nLet me know which time works for you.\n\nBest,\npragya",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-07T12:37:08.339125"
+  },
+  {
+    "draft": "Hi P Sinha,\n\nUnderstood on the urgent need to discuss project priorities.\n\nI have availability today at 3:00 PM IST for 30 minutes.\n\nLet me know if this time works for you.\n\nBest,\npragya",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-07T12:42:37.211921"
+  },
+  {
+    "draft": "Hi Pragya,\n\nThanks. 3:00 PM IST today works to discuss project priorities.\nI'll join.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T12:48:05.030940"
+  },
+  {
+    "draft": "Hi Pragya,\n\n3:00 PM IST works for me today.\n\nI will send a calendar invite for 30 minutes.\n\nBest,\npragya",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-07T12:50:22.607795"
+  },
+  {
+    "draft": "Hi Pragya,\n\nThe 3:00 PM IST slot today works for me.\n\nPlease send a calendar invite.\n\nBest,\npragya",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-07T14:51:30.717402"
+  },
+  {
+    "draft": "Hi P,\n\nThanks for reaching out about project priorities.\n4 PM 1ST today works for me.\nI'll send an invite for 30 minutes.\n\nBest,\npragya",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-07T14:56:32.571157"
+  },
+  {
+    "draft": "Hi Pragya,\n\n3:00 PM IST works for me today. Please send a calendar invite.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T14:56:38.998698"
+  },
+  {
+    "draft": "Hi P Sinha,\n\nThanks for reaching out about project priorities.\n\nI'm available today at 3:00 PM IST or 5:30 PM IST. Let me know which time works for our discussion.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T15:07:36.613884"
+  },
+  {
+    "draft": "Hi Pragya,\n\nThanks for confirming availability. 3:00 PM IST works for me today.\n\nPlease send a calendar invite.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T15:07:45.889666"
+  },
+  {
+    "draft": "*Draft generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\nPlease retry in 18.26916654s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.5-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n  quota_value: 20\n}\n, retry_delay {\n  seconds: 18\n}\n]*",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T15:28:02.836712"
+  },
+  {
+    "draft": "Hi P Sinha,\n\nNoted your request to discuss project priorities. I am available today at 4 PM IST.\n\nPlease confirm if that time works for you.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T16:44:56.925156"
+  },
+  {
+    "draft": "\u26a0\ufe0f Draft generation is temporarily unavailable because the AI service cannot be reached at the moment. Please try again later.",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T16:48:06.639810"
+  },
+  {
+    "draft": "\u26a0\ufe0f Draft generation is temporarily unavailable because the AI service cannot be reached at the moment. Please try again later.",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T16:50:34.214403"
+  },
+  {
+    "draft": "\u26a0\ufe0f Draft generation is temporarily unavailable because the AI service cannot be reached at the moment. Please try again later.",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T16:58:31.741598"
+  },
+  {
+    "draft": "\u26a0\ufe0f Draft generation is temporarily unavailable because the AI service cannot be reached at the moment. Please try again later.",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T16:59:53.657680"
+  },
+  {
+    "draft": "\u26a0\ufe0f Draft generation is temporarily unavailable because the AI service cannot be reached at the moment. Please try again later.",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T17:01:22.852163"
+  },
+  {
+    "draft": "\u26a0\ufe0f Draft generation is temporarily unavailable because the AI service cannot be reached at the moment. Please try again later.",
+    "subject": "Urgent: needs to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T17:03:01.157721"
+  },
+  {
+    "draft": "\u26a0\ufe0f Draft generation is temporarily unavailable because the AI service cannot be reached at the moment. Please try again later.",
+    "subject": "[GitHub] Your Dependabot alerts for the week of Jun 30 - Jul 7",
+    "replying_to": "GitHub <noreply@github.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T17:06:55.735706"
+  },
+  {
+    "draft": "\u26a0\ufe0f Draft generation is temporarily unavailable because the AI service cannot be reached at the moment. Please try again later.",
+    "subject": "Urgent: Need to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T17:24:31.817878"
+  },
+  {
+    "draft": "Hi P Sinha,\n\nUnderstood on discussing project priorities. I'm booked for this evening.\n\nI have availability tomorrow morning at 10:00 AM IST. Does that work for you?\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Urgent: Need to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T19:22:57.274747"
+  },
+  {
+    "draft": "\u26a0\ufe0f Draft generation is temporarily unavailable because the AI service cannot be reached at the moment. Please try again later.",
+    "subject": "Urgent: Need to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T19:31:29.191353"
+  },
+  {
+    "draft": "\u26a0\ufe0f Draft generation is temporarily unavailable because the AI service cannot be reached at the moment. Please try again later.",
+    "subject": "Urgent: Need to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-07T20:10:54.421738"
+  }
+]
