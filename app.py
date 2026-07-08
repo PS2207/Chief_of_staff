@@ -599,16 +599,10 @@ if st.session_state.current_phase == PHASE_INBOX:
                     except Exception as e:
                         traceback.print_exc()
 
-                        if "credentials.json" in str(e):
-                            st.error(
-                               "⚠️ Gmail integration isn't configured for this deployment.\n\n"
-                              "Please switch to **Sample Threads** to explore the app."
-                            )
-                        else:
-                            st.error(
-                               "⚠️ Unable to connect to Gmail.\n\n"
-                               "Please try again later or use **Sample Threads**."
-                            )
+                        st.warning(
+                            "⚠️ Gmail integration isn't configured for this deployment.\n\n"
+                            "Please switch to **Sample Threads** to explore the app."
+                        )
 
                         st.stop()    
                     #---------------------------------------------------------------      
