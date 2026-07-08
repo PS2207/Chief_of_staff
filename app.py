@@ -9,7 +9,7 @@ import os
 import sys
 from datetime import datetime
 import time
-
+import traceback
 import streamlit as st
 
 from engine import (
@@ -591,9 +591,29 @@ if st.session_state.current_phase == PHASE_INBOX:
                         # st.session_state.threads = threads
                         # st.write("Threads stored:", len(st.session_state.threads))
                         
-                    except Exception as e:
-                        st.error(f"Failed to fetch from Gmail: {e}")
-                        st.stop() # <-- or st.rerun() / return
+                    # except Exception as e:
+                    #     st.error(f"Failed to fetch from Gmail: {e}")
+                    #     st.stop() # <-- or st.rerun() / return
+                   
+                 #-------Adding exception after deploy on streamlit cloud---------------------------------
+                    except FileNotFoundError:
+                        traceback.print_exc()
+
+                        st.error(
+                          "⚠️ Gmail integration isn't configured for this deployment.\n\n"
+                          "Please switch to **Sample Threads** to explore the app."
+                        )
+                        st.stop()
+
+                    except Exception:
+                        traceback.print_exc()
+
+                        st.error(
+                        "⚠️ Unable to connect to Gmail.\n\n"
+                        "Please try again later or use **Sample Threads**."
+                        )
+                        st.stop()  
+                    #---------------------------------------------------------------      
             # st.write("Before triage:", len(st.session_state.threads))            
             # Auto-triage if we got threads
             if st.session_state.threads:
