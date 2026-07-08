@@ -596,23 +596,21 @@ if st.session_state.current_phase == PHASE_INBOX:
                     #     st.stop() # <-- or st.rerun() / return
                    
                  #-------Adding exception after deploy on streamlit cloud---------------------------------
-                    except FileNotFoundError:
+                    except Exception as e:
                         traceback.print_exc()
 
-                        st.error(
-                          "⚠️ Gmail integration isn't configured for this deployment.\n\n"
-                          "Please switch to **Sample Threads** to explore the app."
-                        )
-                        st.stop()
+                        if "credentials.json" in str(e):
+                            st.error(
+                               "⚠️ Gmail integration isn't configured for this deployment.\n\n"
+                              "Please switch to **Sample Threads** to explore the app."
+                            )
+                        else:
+                            st.error(
+                               "⚠️ Unable to connect to Gmail.\n\n"
+                               "Please try again later or use **Sample Threads**."
+                            )
 
-                    except Exception:
-                        traceback.print_exc()
-
-                        st.error(
-                        "⚠️ Unable to connect to Gmail.\n\n"
-                        "Please try again later or use **Sample Threads**."
-                        )
-                        st.stop()  
+                        st.stop()    
                     #---------------------------------------------------------------      
             # st.write("Before triage:", len(st.session_state.threads))            
             # Auto-triage if we got threads
