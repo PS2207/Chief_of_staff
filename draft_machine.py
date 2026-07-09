@@ -207,9 +207,9 @@ def generate_sample_draft(thread):
         "CRITICAL: Customer Payments Failing After Latest Deployment":
             """Hi Emma,
 
-Thanks for the quick response and for resolving the issue promptly.
+Please proceed with the rollback immediately.
 
-Please share the root cause analysis once it's ready, along with any preventive measures to reduce the risk of similar incidents in future deployments.
+Customer payments are our top priority. Once the issue has been resolved, please share a root cause analysis along with any preventive actions.
 
 Thanks,
 Jordan""",
@@ -217,9 +217,9 @@ Jordan""",
         "URGENT: Suspicious Login Activity Detected":
             """Hi Daniel,
 
-Thanks for acting quickly to secure the affected account.
+Please proceed with the full incident response process.
 
-Please continue monitoring the systems and send me the full incident report once your investigation is complete. Let me know immediately if any customer impact is identified.
+Rotate any affected credentials, continue monitoring for suspicious activity, and keep me informed of any customer impact. Send me the incident report once the investigation is complete.
 
 Thanks,
 Jordan""",
@@ -227,9 +227,9 @@ Jordan""",
         "Q4 Product Roadmap Feedback Needed":
             """Hi Sophia,
 
-Thanks for the clarification.
+Thanks for reaching out.
 
-I'll prepare my Q4 priorities with infrastructure modernization included under technical debt and send the complete document before Thursday.
+I'll prepare my top three platform priorities, including major feature work, technical improvements, and staffing requirements, and send them before Thursday.
 
 Thanks,
 Jordan""",
@@ -237,9 +237,9 @@ Jordan""",
         "Vendor Renewal Decision Required":
             """Hi Olivia,
 
-Thanks for handling this.
+Let's proceed with the one-year renewal option.
 
-Please send me the final agreement once it's ready. After I review it, you can proceed with the one-year renewal.
+Please send me the final agreement for review before we complete the renewal.
 
 Thanks,
 Jordan""",
@@ -247,59 +247,9 @@ Jordan""",
         "Meeting Request: AI Dashboard Prototype Review":
             """Hi Lucas,
 
-Thanks for confirming.
+Thursday afternoon works well for me.
 
-I'll review the design deck before Thursday's meeting. Looking forward to discussing the prototype and next steps.
-
-Thanks,
-Jordan""",
-
-        "Production Database Storage Reaching Critical Capacity":
-            """Hi Michael,
-
-Thanks for the update.
-
-I'm glad the storage expansion completed successfully. Please continue monitoring the database over the next 24 hours and share a brief summary once everything remains stable.
-
-Thanks,
-Jordan""",
-
-        "Legal Review Required Before Enterprise Contract Signature":
-            """Hi Rachel,
-
-Thanks for taking this forward.
-
-Please keep me informed of the customer's response and let me know if any executive involvement is needed during the negotiations.
-
-Thanks,
-Jordan""",
-
-        "Customer Escalation: Major Feature Missing in Latest Release":
-            """Hi Nathan,
-
-Thanks for arranging the customer call and preparing the workaround.
-
-Please keep me updated after the discussion and let me know if there are any additional commitments we need to make.
-
-Thanks,
-Jordan""",
-
-        "Marketing Budget Approval for Product Launch Campaign":
-            """Hi Emily,
-
-Thanks for updating the proposal.
-
-Once you've revised the budget allocation, please send me the final version for approval before we move ahead with the campaign.
-
-Thanks,
-Jordan""",
-
-        "Meeting Request: Quarterly Engineering Capacity Planning":
-            """Hi David,
-
-Thanks for scheduling the meeting.
-
-I'll review the planning documents before Tuesday so we can make the best use of our discussion.
+Please send the prototype materials beforehand so I can review them prior to the meeting.
 
 Looking forward to it.
 
@@ -307,15 +257,7 @@ Thanks,
 Jordan"""
     }
 
-    return sample_drafts.get(
-        subject,
-        """Hi,
-
-Thanks for the update. I'll review it and get back to you shortly.
-
-Thanks,
-Jordan"""
-    )
+    return sample_drafts.get(subject, "")
 # ----------------------------------------------------------------------------------------------------------
 
 def draft_reply_with_metadata(thread):
