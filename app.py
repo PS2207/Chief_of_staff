@@ -3,7 +3,7 @@ app.py — 'The Draft Desk' Streamlit UI for the AI Email Ghostwriter.
 
 Combines triage, draft generation, approval gate, and export into one dashboard.
 """
-
+import pandas as pd
 import json
 import os
 import sys
@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from triage import triage_inbox
 from context_builder import assemble_context, format_thread_history
-from draft_machine import draft_reply, draft_reply_with_metadata, draft_reply_with_metadata_groq
+from draft_machine import draft_reply, generate_sample_draft,  draft_reply_with_metadata, draft_reply_with_metadata_groq
 # from approval_gate import save_approved_draft, load_approved_drafts
 from email.utils import parseaddr
 from approval_utils import save_approved_draft, load_approved_drafts
@@ -72,19 +72,17 @@ def _get_calendar_engine():
     return calendar_engine
 
 from task_logger import log_action, get_action_log #action_log.json file 
-
-# chenge in INBOX SECTION,DRAFT GENERATION, APPROVAL GATE
-# def normalize_thread_id(t):
-#     return (
-#         t.get("id")
-#         or t.get("threadId")
-#         or t.get("gmail_thread_id")
-#     )
-def normalize_thread_id(t):#for calender changed
-    tid = t.get("id") or t.get("threadId") or t.get("gmail_thread_id")
-    if not tid:
-        tid = f"missing_{hash(str(t))}"
-    return str(tid)    
+# from helper import get_draft_error_message
+from helper import (
+    normalize_thread_id,
+    get_thread_by_id,
+    get_draft_error_message,
+)
+from proof_export import (
+    generate_proof_markdown,
+    generate_proof_html,
+)
+   
 # ---------------------------------------------------------------------------
 # Page configuration
 # ---------------------------------------------------------------------------
@@ -98,6 +96,7 @@ st.set_page_config(
 # Helper: load sample threads
 # ---------------------------------------------------------------------------
 def load_sample_threads(limit=None):
+    print("load_sample_threads limit =", limit)
     """Load the 5 demo email threads from sample_threads.json."""
     path = os.path.join(os.path.dirname(__file__), "sample_threads.json")
     if not os.path.exists(path):
@@ -149,18 +148,6 @@ def navigate_to(phase: str):
     st.session_state.current_phase = phase
 
 
-def get_thread_by_id(thread_id: str):
-    """Return the thread dict matching the given id."""
-    for t in st.session_state.threads:
-          if normalize_thread_id(t) == thread_id:
-        # if (
-        #     t.get("id")
-        #     or t.get("threadId")
-        #     or t.get("gmail_thread_id")
-        # ) == thread_id:
-            return t
-    return None
-
 
 def get_draft_status(thread_id: str) -> str:
     """Return a status label for a thread: 'draft', 'approved', 'rejected', or 'none'."""
@@ -194,7 +181,11 @@ def run_full_pipeline(email_limit, status):
     Fetch -> Triage -> Generate Drafts -> Stop at Approval Gate.
     Returns a list of log strings.
     """
-
+    print("parameter email_limit =", email_limit)
+    print("session email_limit =", st.session_state.email_limit)
+    print("=" * 60)
+    print("email_limit received:", email_limit)
+    print("=" * 60)
     logs = []
 
     # ----------------------------------------------------
@@ -207,6 +198,8 @@ def run_full_pipeline(email_limit, status):
         )
         if st.session_state.source == SOURCE_SAMPLE:
             threads = load_sample_threads(email_limit)
+            st.write("email_limit =", email_limit)#for debug 2 lines
+            st.write("threads loaded =", len(threads))
             logs.append(f"✅ Loaded {len(threads)} sample thread(s).")
 
         else:
@@ -214,6 +207,7 @@ def run_full_pipeline(email_limit, status):
             logs.append(f"✅ Loaded {len(threads)} Gmail thread(s).")
 
         st.session_state.threads = threads
+        st.write("session threads =", len(st.session_state.threads))#for debug
 
         total = max(1, len(threads))
 
@@ -322,70 +316,103 @@ def run_full_pipeline(email_limit, status):
 
     actionable.extend(triaged.get(PRIORITY_URGENT, []))
     actionable.extend(triaged.get(PRIORITY_NEEDS_REPLY, []))
-
-    logs.append(f"✍️ Generating {len(actionable)} draft(s)...")
-
     success = 0
-    # total_drafts = max(1, len(actionable))
-    for i, thread in enumerate(actionable, start=1):
-        subject = thread.get("subject", "(No subject)")
-        status.update(
-           label=f"Step 3/3 - Drafting replies {i}/{len(actionable)}: {subject}",
-           state="running",
-        )
+    failed = 0
+    # logs.append(f"✍️ Generating {len(actionable)} draft(s)...")
+    if actionable:
+        logs.append(f"✍️ Generating {len(actionable)} draft(s)...")  
+        print("Threads:", len(threads))
+        print("Urgent:", len(triaged.get(PRIORITY_URGENT, [])))
+        print("Needs Reply:", len(triaged.get(PRIORITY_NEEDS_REPLY, [])))
+        print("Actionable:", len(actionable))
+        
+        for i, thread in enumerate(actionable, start=1):
+            subject = thread.get("subject", "(No subject)")
+            status.update(
+              label=f"Step 3/3 - Drafting replies {i}/{len(actionable)}: {subject}",
+              state="running",
+            )
 
-        logs.append(
-         f"Draft {i}/{len(actionable)} : {thread.get('subject','No subject')}"
-        )
+            logs.append(
+              f"Draft {i}/{len(actionable)} : {thread.get('subject','No subject')}"
+            )
        
-        try:
+            try:
             
-            thread_id = normalize_thread_id(thread)
+                thread_id = normalize_thread_id(thread)
+                
+                if st.session_state.source == SOURCE_SAMPLE:
+                    draft = generate_sample_draft(thread)
+                else:
+                   draft = draft_reply(thread)
 
-            draft = draft_reply(thread)
+                # draft = draft_reply(thread)
 
-            st.session_state.drafts[thread_id] = draft
+                if not draft or not str(draft).strip():
+                   raise ValueError("Draft content is empty.")  
+                    
+                st.session_state.drafts[thread_id] = draft
 
-            success += 1
-            status.write(
-              f"✅ Draft {i}/{total} completed"
-            )
-            logs.append(
-                f"   ✔ Draft {i}/{len(actionable)} : {thread.get('subject','(No subject)')}"
-            )
+                success += 1
+                status.write(
+                    f"✅ Draft {i}/{len(actionable)} completed"
+                )
+                logs.append(
+                    f"   ✔ Draft {i}/{len(actionable)} : {thread.get('subject','(No subject)')}"
+                )
 
-        except Exception as e:
+            except Exception as e:
+                failed += 1
             # print("Draft generation error:", e)  this is for terminal error
-            logs.append(
-                f"⚠️ Draft {i}/{len(actionable)} could not be generated because the AI service has reached its usage limit."
-            )
-        st.write("Subject:", subject)
-        st.write("Category:", thread.get("category"))
-        st.write("Priority:", thread.get("priority"))
-        st.write("Source:", st.session_state.source)
-        # st.write("Is meeting:", is_meeting)
+                logs.append(
+                    f"⚠️ Draft {i}/{len(actionable)} could not be generated. {get_draft_error_message(e)}"
+                )
+    else:
+        logs.append("ℹ️ No actionable emails found. Draft generation skipped.")  
+              
+
     # ----------------------------------------------------
     # Step 5: Move to Approval Gate
     # ----------------------------------------------------
     # st.session_state.current_phase = PHASE_APPROVAL
+
+    if success:
+      label = "Pipeline completed - drafts ready for review"
+    else:
+      label = "Pipeline completed"
+
     status.update(
-    label=" Pipeline Complete - review drafts",
-    state="complete",
-    expanded=False,
-)
+      label=label,
+      state="complete",
+      expanded=False,
+    )
     # show on UI after pipeline complete
     logs.append("")
     logs.append("────────────────────────")
-    logs.append("Pipeline Complete - review drafts.")
-    logs.append(f"Drafts Generated : {success}")
-    logs.append("Current Phase : Approval Gate")
-    logs.append(f"✅ {success} draft(s) ready for review.")
-    if success > 0:
-        logs.append(f"✅ {success} draft(s) ready for review.")
+    
+    if success == len(actionable):
+      logs.append("Pipeline completed successfully.")
+    elif success > 0:
+      logs.append("Pipeline completed with partial success.")
     else:
-        logs.append(
-        "⚠️ No drafts were generated because the AI service is currently unavailable."
-      )
+      logs.append("Pipeline completed.")
+      
+    logs.append(f"Drafts Generated: {success} of {len(actionable)}")
+
+    if failed:
+       logs.append(f"Failed Drafts: {failed}")
+    
+    if len(actionable) == 0:
+       logs.append("ℹ️ No actionable emails were found.")
+       logs.append("Nothing requires approval.")
+       
+    elif success > 0:
+       logs.append(f"✅ {success} draft(s) ready for review.")
+       if failed:
+           logs.append(f"⚠️ {failed} draft(s) could not be generated.")
+    else:
+       logs.append("⚠️ Draft generation failed.")
+       logs.append("No drafts were generated because the AI service could not complete the requests.")
 
     return logs
 #---------------after pull triage code------------------------------------------------------------------------------------------
@@ -394,6 +421,11 @@ def run_full_pipeline(email_limit, status):
 # ---------------------------------------------------------------------------
 with st.sidebar:
         
+    st.title("✍️ The Draft Desk")
+    st.caption("AI-powered email copilot")
+        # ==========================================================
+    # Run Full Pipeline
+    # ==========================================================
     email_limit = st.number_input(
         "Emails to fetch",
         min_value=1,
@@ -402,11 +434,7 @@ with st.sidebar:
         step=1,
         key="email_limit"
     )
-    st.title("✍️ The Draft Desk")
-    st.caption("AI-powered email ghostwriter")
-        # ==========================================================
-    # Run Full Pipeline
-    # ==========================================================
+
     st.divider()
 
     if st.button(
@@ -414,32 +442,16 @@ with st.sidebar:
        use_container_width=True,
        type="primary",
     ):
-        # logs = run_full_pipeline(email_limit)
-        # st.session_state.pipeline_logs = logs   
+      
         st.session_state.run_pipeline = True
+        
         st.session_state.current_phase = PHASE_INBOX
         st.rerun()
 
     st.caption(
-      "Fetches, triages, generates drafts,\n"
-      "and stops at Approval Gate."
+      "Fetch emails, triage priorities, generate AI drafts, and review before sending."
     )
-    # ------Adding-------
-    # if st.session_state.pipeline_logs:
-
-    #     with st.expander(
-    #         "⚙️ Pipeline Execution Log",
-    #         expanded=False,
-    #     ):
-    #         for line in st.session_state.pipeline_logs:
-    #            st.write(line)
-
-    #         if st.button(
-    #            "🗑️ Clear Log",
-    #            use_container_width=True,
-    #         ):
-    #            st.session_state.pipeline_logs = []
-    #            st.rerun()
+ 
     st.divider()
 
     source = st.radio(
@@ -453,7 +465,16 @@ with st.sidebar:
             st.session_state.source_radio,
         ),
     )
-
+    # email_limit = st.number_input(
+    #     "Emails to fetch",
+    #     min_value=1,
+    #     max_value=50,
+    #     value=DEFAULT_EMAIL_FETCH_LIMIT,
+    #     step=1,
+    #     key="email_limit"
+    # )
+    # st.write("Sidebar email_limit =", email_limit)
+    # st.write("Session email_limit =", st.session_state.email_limit)
     st.divider()
 
     st.subheader("🧭 Navigation")
@@ -484,11 +505,23 @@ with st.sidebar:
     rejected = len(st.session_state.rejected)
 
     # st.subheader("📊 Workflow Status")
-    st.write(f"Loaded: **{loaded}** thread(s)")
-    st.write(f"Triaged: **{triaged}**")
-    st.write(f"Drafts: **{drafts}**")
-    st.write(f"Approved: **{approved}**")
-    st.write(f"Rejected: **{rejected}**")
+    # st.write(f"Loaded: **{loaded}** thread(s)")
+    # st.write(f"Triaged: **{triaged}**")
+    # st.write(f"Drafts: **{drafts}**")
+    # st.write(f"Approved: **{approved}**")
+    # st.write(f"Rejected: **{rejected}**")
+    
+    col1, col2 = st.columns(2)
+
+    col1.metric("Loaded", loaded)
+    col2.metric("Triaged", triaged)
+
+    col1, col2 = st.columns(2)
+
+    col1.metric("Drafts", drafts)
+    col2.metric("Approved", approved)
+
+    st.metric("Rejected", rejected)
 
     st.divider()
 
@@ -539,11 +572,12 @@ if st.session_state.current_phase == PHASE_INBOX:
             "move to Draft Generation."
         )
         with st.status("🚀 Running Full Pipeline...", expanded=True) as status:
-            st.session_state.pipeline_logs = run_full_pipeline(email_limit,status)
+            st.session_state.pipeline_logs = run_full_pipeline(email_limit,status,)
             st.session_state.run_pipeline = False 
            
             
             navigate_to(PHASE_APPROVAL)   
+            
             st.rerun()
             # status.update(
             #  label="✅ Pipeline Complete",
@@ -557,10 +591,13 @@ if st.session_state.current_phase == PHASE_INBOX:
     col1, col2, col3 = st.columns([1, 1, 3])
     with col1:
         if st.button("🔍 Pull & Triage", type="primary", use_container_width=True):
-            with st.spinner("Loading threads..."):
+            with st.spinner("Fetching email threads......"):
 
                 if st.session_state.source == SOURCE_SAMPLE:
+                    # print("email_limit received =", email_limit)
+                    #for debug
                     threads = load_sample_threads(email_limit)
+                    # print("threads loaded =", len(threads))
                     st.session_state.threads = threads
                     st.session_state.triage_done = False
                 else:
@@ -802,8 +839,19 @@ elif st.session_state.current_phase == PHASE_DRAFT:
                     thread_id = normalize_thread_id(t)
                     status_text.info(f"✍️ Drafting reply for: **{t.get('subject', '(No subject)')}**")
                     try:
+                        # draft_text = draft_reply(t)
+                        # st.session_state.drafts[thread_id] = draft_text
+                        # for debug
                         draft_text = draft_reply(t)
+
+                        print("=" * 60)
+                        # print("SUBJECT:", subject)
+                        print("THREAD ID:", thread_id)
+                        print("DRAFT:", repr(draft_text))
+                        print("=" * 60)
+
                         st.session_state.drafts[thread_id] = draft_text
+                        
                     except Exception as e:
                         print("Draft generation error:", e)
                         st.session_state.drafts[thread_id] = ( 
@@ -823,6 +871,7 @@ elif st.session_state.current_phase == PHASE_DRAFT:
                     # thread_id = t.get("id") or t.get("threadId") or f"missing_{hash(str(t))}"
                     thread_id = normalize_thread_id(t)
                     subject = t.get("subject", "(No subject)")
+                    print("SUBJECT:", subject)
                     messages = t.get("messages", [])
                     draft_text = st.session_state.drafts.get(thread_id, "")
 
@@ -923,22 +972,43 @@ elif st.session_state.current_phase == PHASE_APPROVAL:
 
             # Skip if already approved or rejected
             # if thread_id in st.session_state.approved or thread_id in st.session_state.rejected:
-            if thread_id in st.session_state.sent or thread_id in st.session_state.rejected:    
-                # Show a collapsed summary for already-reviewed threads
-                with st.expander(f"**{subject}** — ✅ Approved" if thread_id in st.session_state.sent else f"**{subject}** — ❌ Rejected", expanded=False):
-                    pass
-                continue
+            # if thread_id in st.session_state.sent or thread_id in st.session_state.rejected:    
+            #     # Show a collapsed summary for already-reviewed threads
+            #     with st.expander(f"**{subject}**" — 📤 Sent " if thread_id in st.session_state.sent else f"**{subject}** — ❌ Rejected", expanded=False):
+            #         pass
+            #     continue
+            # Skip if already sent or rejected
+            if thread_id in st.session_state.sent or thread_id in st.session_state.rejected:
+
+                if thread_id in st.session_state.sent:
+                    title = f"**{subject}** — 📤 Sent"
+                else:
+                    title = f"**{subject}** — 🔴 Rejected"
+
+                with st.expander(title, expanded=False):
+                   pass
+
+                continue    
 
             all_done = False
             draft_text = st.session_state.drafts.get(thread_id, "")
             edit_key = f"edit_{thread_id}"
+# ------------------------------------------------------------------------
+            # Review status
+            if thread_id in st.session_state.approved:
+               status = "🟢 Approved"
+            elif thread_id in st.session_state.rejected:
+               status = "🔴 Rejected"
+            else:
+               status = "⏳ Pending Review"
 
-            with st.expander(f"**{subject}**", expanded=True):
+            with st.expander(f"**{subject} — {status}**", expanded=True):
+            # with st.expander(f"**{subject}**", expanded=True):
                 col_left, col_right = st.columns(2)
 
                 # ── Left: full thread history ──────────────────────
                 with col_left:
-                    st.markdown("**💬 Full Thread**")
+                    st.markdown("**💬 Email Thread**")
                     for msg in messages:
                         st.markdown(f"**From:** {msg.get('from', '')}")
                         st.markdown(f"**Date:** {msg.get('date', '')}")
@@ -975,7 +1045,7 @@ elif st.session_state.current_phase == PHASE_APPROVAL:
                          subject=subject,
                          replying_to=messages[-1].get("from", "unknown"),
                          model="gemini-2.5-flash",
-                         edited=(edited_draft != draft_text),
+                         edited=(edited_draft != draft_text), 
                         )
                         st.success("✅ Draft approved. Ready to send.")
                         st.rerun()
@@ -1225,14 +1295,14 @@ elif st.session_state.current_phase == PHASE_EXPORT:
         # ── Side-by-side preview ──────────────────────────────────
         with st.expander("📄 Preview Approved Drafts", expanded=True):
             for thread_id, draft_text in approved.items():
-                t = get_thread_by_id(thread_id)
+                t = get_thread_by_id(thread_id , st.session_state.threads,)
                 subject = t.get("subject", "(No subject)") if t else "(Unknown thread)"
                 messages = t.get("messages", []) if t else []
 
                 st.markdown(f"### {subject}")
                 cols = st.columns(2)
                 with cols[0]:
-                    st.markdown("**📨 Original Thread**")
+                    st.markdown("**📨 Original Email**")
                     for msg in messages:
                         st.markdown(f"**From:** {msg.get('from', '')}")
                         st.markdown(f"**Date:** {msg.get('date', '')}")
@@ -1241,200 +1311,53 @@ elif st.session_state.current_phase == PHASE_EXPORT:
                 with cols[1]:
                     st.markdown("**✅ Approved Draft**")
                     st.markdown(draft_text)
-                st.divider()
+                 
+        st.divider()
+                
         st.subheader("📋 Action Log") #adding foe export proof logaction
         actions = get_action_log()
+        # DEBUG - remove later
+        # st.write("Actions loaded:", actions)
         if not actions:
             st.info("No actions logged yet.")
         else:
+            # ------------for table in export page---------------
+            rows = []
             for action in reversed(actions):
-                col1, col2, col3, col4 = st.columns([1,3,2,2])             
-               
-                with col1:
-                    icon = "📨" if action.get("action_type") == "sent" else "📅"
-                    st.write(f"{icon} {action.get('action_type').upper()}")    
+                if action["action_type"] == "sent":
+                   action_name = "📤 SENT"
+                else:
+                   action_name = "📅 BOOKED"                 
                 
-                with col2:
-                    st.markdown(f"**{action.get('thread_subject')}**")
-                    
-                with col3:
-                    st.code(action.get("detail"), language=None) 
-                    
-                with col4:
-                    try:
-                       ts = datetime.fromisoformat(action["timestamp"])
-                       st.caption(ts.strftime("%b %d %I:%M %p"))
-                    except Exception:
-                        
-                       st.caption(action.get("timestamp", "") )    
-          
-                                
-        # ── Generate proof functions ───────────────────────────────
-        def generate_proof_markdown():
-            lines = [
-                "# 📧 Proof of Human-in-the-Loop Review",
-                f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-                f"**Total Approved Drafts:** {len(approved)}",
-                "",
-                "---",
-                "",
-            ]
-            for thread_id, draft_text in approved.items():
-                t = get_thread_by_id(thread_id)
-                subject = t.get("subject", "(No subject)") if t else "(Unknown thread)"
-                messages = t.get("messages", []) if t else []
+                try:
+                   ts = datetime.fromisoformat(action["timestamp"])
+                   time_text = ts.strftime("%b %d %I:%M %p")
+                except Exception:
+                   time_text = action.get("timestamp", "")
 
-                lines.append(f"## {subject}")
-                lines.append("")
-                lines.append("### Original Email Thread")
-                lines.append("")
-                for msg in messages:
-                    lines.append(f"> **From:** {msg.get('from', '')}")
-                    lines.append(f"> **Date:** {msg.get('date', '')}")
-                    lines.append(">")
-                    for body_line in msg.get("body", "").split("\n"):
-                        lines.append(f"> {body_line}")
-                    lines.append(">")
-                    lines.append("---")
-                    lines.append("")
-                lines.append("### ✅ Approved Draft Reply")
-                lines.append("")
-                lines.append("```")
-                lines.append(draft_text)
-                lines.append("```")
-                lines.append("")
-                lines.append("---")
-                lines.append("")
-            lines.append("")
-            lines.append("---")
-            lines.append("*Shared with #MyChiefOfStaff to earn your Ghostwriter badge!*")
-            return "\n".join(lines)
+                rows.append({
+                    "Action": action_name,
+                    "Subject": action.get("thread_subject", ""),
+                    "Details": action.get("detail", ""),
+                    "Time": time_text,
+                })  
+            df = pd.DataFrame(rows)
 
-        def generate_proof_html():
-            cards_html = ""
-            for thread_id, draft_text in approved.items():
-                t = get_thread_by_id(thread_id)
-                subject = t.get("subject", "(No subject)") if t else "(Unknown thread)"
-                messages = t.get("messages", []) if t else []
-
-                # Build original messages HTML
-                msgs_html = ""
-                for msg in messages:
-                    body_escaped = msg.get("body", "").replace("\n", "<br>")
-                    msgs_html += f"""
-                    <div class="msg">
-                        <div class="msg-from">{msg.get('from', '')}</div>
-                        <div class="msg-date">{msg.get('date', '')}</div>
-                        <div class="msg-body">{body_escaped}</div>
-                    </div>
-                    """
-                draft_escaped = draft_text.replace("\n", "<br>")
-
-                cards_html += f"""
-                <div class="card">
-                    <h2>{subject}</h2>
-                    <div class="grid">
-                        <div class="original">
-                            <h3>📨 Original Thread</h3>
-                            {msgs_html}
-                        </div>
-                        <div class="draft">
-                            <h3>✅ Approved Draft</h3>
-                            <div class="draft-text">{draft_escaped}</div>
-                        </div>
-                    </div>
-                </div>
-                """
-
-            return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proof of Review — The Draft Desk</title>
-    <style>
-        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{
-            background-color: #1a1a2e;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }}
-        h1 {{ color: #e94560; margin-bottom: 0.5rem; }}
-        .subtitle {{ color: #888; margin-bottom: 2rem; }}
-        .card {{
-            background: #16213e;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }}
-        .card h2 {{ color: #e94560; margin-bottom: 1rem; }}
-        .grid {{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }}
-        .original {{
-            background: #0f3460;
-            border: 2px solid #e67e22;
-            border-radius: 8px;
-            padding: 1rem;
-        }}
-        .original h3 {{ color: #e67e22; margin-bottom: 0.75rem; }}
-        .draft {{
-            background: #0f3460;
-            border: 2px solid #27ae60;
-            border-radius: 8px;
-            padding: 1rem;
-        }}
-        .draft h3 {{ color: #27ae60; margin-bottom: 0.75rem; }}
-        .msg {{
-            border-bottom: 1px solid #333;
-            padding: 0.5rem 0;
-        }}
-        .msg:last-child {{ border-bottom: none; }}
-        .msg-from {{ font-weight: 600; color: #e0e0e0; }}
-        .msg-date {{ color: #888; font-size: 0.8rem; }}
-        .msg-body {{ color: #bbb; margin-top: 0.25rem; line-height: 1.5; }}
-        .draft-text {{
-            color: #a5d6a7;
-            line-height: 1.6;
-            white-space: pre-wrap;
-        }}
-        .footer {{
-            text-align: center;
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: #16213e;
-            border-radius: 12px;
-            color: #888;
-        }}
-        .footer strong {{ color: #e94560; }}
-        @media (max-width: 768px) {{
-            .grid {{ grid-template-columns: 1fr; }}
-        }}
-    </style>
-</head>
-<body>
-    <h1>📧 Proof of Human-in-the-Loop Review</h1>
-    <div class="subtitle">
-        Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} &nbsp;|&nbsp;
-        Total Approved Drafts: {len(approved)}
-    </div>
-    {cards_html}
-    <div class="footer">
-        🤖 Generated by <strong>The Draft Desk</strong> — AI Email Ghostwriter<br><br>
-        Share with <strong>#MyChiefOfStaff</strong> to earn your Ghostwriter badge!
-    </div>
-</body>
-</html>"""
+            st.dataframe(
+                df,
+                hide_index=True,
+                use_container_width=True,
+            ) 
+            # st.write(df)    
+            # --------------------------------------------------------
+             
 
         # ── Download buttons ──────────────────────────────────────
         col_dl1, col_dl2, _ = st.columns([1, 1, 4])
         with col_dl1:
-            md_content = generate_proof_markdown()
+            md_content = generate_proof_markdown(
+                st.session_state.approved,
+                st.session_state.threads)
             st.download_button(
                 label="📄 Download Proof (Markdown)",
                 data=md_content,
@@ -1444,7 +1367,9 @@ elif st.session_state.current_phase == PHASE_EXPORT:
                 type="primary",
             )
         with col_dl2:
-            html_content = generate_proof_html()
+            html_content = generate_proof_html(    
+                st.session_state.approved,
+                st.session_state.threads,)
             st.download_button(
                 label="📄 Download Proof (HTML)",
                 data=html_content,
@@ -1457,9 +1382,8 @@ elif st.session_state.current_phase == PHASE_EXPORT:
         st.markdown("---")
         st.info("📢 Share with **#MyChiefOfStaff** to earn your Ghostwriter badge!")
         
-        
-        
-        
+  
+   
         
 #  this page can be structred like below-
 # app.py                  (~150 lines)

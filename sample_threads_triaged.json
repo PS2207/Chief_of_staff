@@ -21,7 +21,7 @@
         ],
         "priority": "urgent",
         "category": "production",
-        "reason": "The email reports a production issue that has been resolved but may require further attention or review."
+        "reason": "The email reports a production issue that has been resolved, but may require further attention or follow-up."
     },
     {
         "id": "thread-002",
@@ -45,7 +45,7 @@
         ],
         "priority": "needs-reply",
         "category": "request",
-        "reason": "Meera expects a response with notes on the Q3 roadmap."
+        "reason": "The sender, Meera, is expecting a response with notes regarding the Q3 roadmap."
     },
     {
         "id": "thread-003",

@@ -1,3 +1,9 @@
+# 3 functions in this file:-
+# 1) triage_thread(sender: str, subject: str, snippet: str)
+# 2)parse_triage_response(text: str) 
+# 3)triage_inbox(threads: list) 
+
+
 import os
 import time
 

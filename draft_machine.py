@@ -1,3 +1,5 @@
+# 6 functions in this file:
+
 import os
 import sys
 import json
@@ -192,7 +194,62 @@ def draft_reply_groq(thread, api_key=None):
         messages=[{"role": "user", "content": prompt}],
     )
     return completion.choices[0].message.content.strip()
+# -----------------------------------------------------------------------------------------------
+def generate_sample_draft(thread):
+    """
+    Generates fixed demo drafts without calling any AI API.
+    Used only for sample threads.
+    """
 
+    subject = thread.get("subject", "")
+
+    sample_drafts = {
+        "PRODUCTION DOWN — API rate limiting causing 503 errors":
+            """Hi Arjun,
+
+Glad to hear the rollback resolved the 503 errors. Please share the root-cause analysis after the review so we can document the fix and prevent similar issues.
+
+Thanks,
+Rahul""",
+
+        "Q3 Roadmap — Request for your input":
+            """Hi Meera,
+
+I'll include the analytics infrastructure upgrade under technical debt as discussed. I'll share the Q3 engineering priorities before Thursday.
+
+Thanks,
+Rahul""",
+
+        "Weekly Standup Notes — June 23":
+            """Hi Anika,
+
+Thanks for sharing the update. The progress looks good. No further action needed from my side right now.
+
+Thanks,
+Rahul""",
+
+        "Contract Renewal — DataPulse Analytics Suite":
+            """Hi Priya,
+
+The 1-year renewal option works. Please proceed with the discounted renewal and keep me copied on the final confirmation.
+
+Thanks,
+Rahul""",
+
+        "Meeting Request: AI Feature Review — New Concepts":
+            """Hi Kavya,
+
+Thursday at 3 PM works. Please send the one-pager before the meeting so I can review the concepts beforehand.
+
+Thanks,
+Rahul"""
+    }
+
+    return sample_drafts.get(
+        subject,
+        "Thanks for the update. I'll review and get back to you."
+    )
+# ----------------------------------------------------------------------------------------------------------
 
 def draft_reply_with_metadata(thread):
     """Like draft_reply but returns a dict with: draft, model, subject, replying_to."""

@@ -3,6 +3,7 @@ context_builder.py, credentials.json, draft_machine.py, engine.py,
 original_5_emails.json, past_replies.json
 sample_threads.josn, token.json, tone_profile.json, triage.py
 --------------------------------------------------------------------------
+
 Project Overview:
 This is the architecture I'd recommend for this project
 This project is an AI-powered email assistant (called The Draft Desk / Chief of Staff) 
