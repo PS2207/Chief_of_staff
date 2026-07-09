@@ -204,50 +204,117 @@ def generate_sample_draft(thread):
     subject = thread.get("subject", "")
 
     sample_drafts = {
-        "PRODUCTION DOWN — API rate limiting causing 503 errors":
-            """Hi Arjun,
+        "CRITICAL: Customer Payments Failing After Latest Deployment":
+            """Hi Emma,
 
-Glad to hear the rollback resolved the 503 errors. Please share the root-cause analysis after the review so we can document the fix and prevent similar issues.
+Thanks for the quick response and for resolving the issue promptly.
 
-Thanks,
-Rahul""",
-
-        "Q3 Roadmap — Request for your input":
-            """Hi Meera,
-
-I'll include the analytics infrastructure upgrade under technical debt as discussed. I'll share the Q3 engineering priorities before Thursday.
+Please share the root cause analysis once it's ready, along with any preventive measures to reduce the risk of similar incidents in future deployments.
 
 Thanks,
-Rahul""",
+Jordan""",
 
-        "Weekly Standup Notes — June 23":
-            """Hi Anika,
+        "URGENT: Suspicious Login Activity Detected":
+            """Hi Daniel,
 
-Thanks for sharing the update. The progress looks good. No further action needed from my side right now.
+Thanks for acting quickly to secure the affected account.
 
-Thanks,
-Rahul""",
-
-        "Contract Renewal — DataPulse Analytics Suite":
-            """Hi Priya,
-
-The 1-year renewal option works. Please proceed with the discounted renewal and keep me copied on the final confirmation.
+Please continue monitoring the systems and send me the full incident report once your investigation is complete. Let me know immediately if any customer impact is identified.
 
 Thanks,
-Rahul""",
+Jordan""",
 
-        "Meeting Request: AI Feature Review — New Concepts":
-            """Hi Kavya,
+        "Q4 Product Roadmap Feedback Needed":
+            """Hi Sophia,
 
-Thursday at 3 PM works. Please send the one-pager before the meeting so I can review the concepts beforehand.
+Thanks for the clarification.
+
+I'll prepare my Q4 priorities with infrastructure modernization included under technical debt and send the complete document before Thursday.
 
 Thanks,
-Rahul"""
+Jordan""",
+
+        "Vendor Renewal Decision Required":
+            """Hi Olivia,
+
+Thanks for handling this.
+
+Please send me the final agreement once it's ready. After I review it, you can proceed with the one-year renewal.
+
+Thanks,
+Jordan""",
+
+        "Meeting Request: AI Dashboard Prototype Review":
+            """Hi Lucas,
+
+Thanks for confirming.
+
+I'll review the design deck before Thursday's meeting. Looking forward to discussing the prototype and next steps.
+
+Thanks,
+Jordan""",
+
+        "Production Database Storage Reaching Critical Capacity":
+            """Hi Michael,
+
+Thanks for the update.
+
+I'm glad the storage expansion completed successfully. Please continue monitoring the database over the next 24 hours and share a brief summary once everything remains stable.
+
+Thanks,
+Jordan""",
+
+        "Legal Review Required Before Enterprise Contract Signature":
+            """Hi Rachel,
+
+Thanks for taking this forward.
+
+Please keep me informed of the customer's response and let me know if any executive involvement is needed during the negotiations.
+
+Thanks,
+Jordan""",
+
+        "Customer Escalation: Major Feature Missing in Latest Release":
+            """Hi Nathan,
+
+Thanks for arranging the customer call and preparing the workaround.
+
+Please keep me updated after the discussion and let me know if there are any additional commitments we need to make.
+
+Thanks,
+Jordan""",
+
+        "Marketing Budget Approval for Product Launch Campaign":
+            """Hi Emily,
+
+Thanks for updating the proposal.
+
+Once you've revised the budget allocation, please send me the final version for approval before we move ahead with the campaign.
+
+Thanks,
+Jordan""",
+
+        "Meeting Request: Quarterly Engineering Capacity Planning":
+            """Hi David,
+
+Thanks for scheduling the meeting.
+
+I'll review the planning documents before Tuesday so we can make the best use of our discussion.
+
+Looking forward to it.
+
+Thanks,
+Jordan"""
     }
 
     return sample_drafts.get(
         subject,
-        "Thanks for the update. I'll review and get back to you."
+        """Hi,
+
+Thanks for the update. I'll review it and get back to you shortly.
+
+Thanks,
+Jordan"""
     )
 # ----------------------------------------------------------------------------------------------------------
 
