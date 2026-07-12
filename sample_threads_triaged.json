@@ -1,112 +1,44 @@
 [
     {
         "id": "thread-001",
-        "subject": "PRODUCTION DOWN — API rate limiting causing 503 errors",
+        "subject": "CRITICAL: Customer Payments Failing After Latest Deployment",
         "messages": [
             {
-                "from": "Arjun (Engineering Lead)",
-                "date": "2026-06-23 09:15",
-                "body": "Hi Rahul,\n\nWe're seeing a sharp spike in 503 errors on the production API since the last deployment (~08:30 today). It looks like the new rate-limiting middleware is too aggressive — legitimate traffic is getting blocked.\n\nThis is affecting all customer-facing endpoints. I've rolled back the middleware change on staging but need your sign-off to hotfix prod.\n\nCan you take a look ASAP?\n\n- Arjun"
-            },
-            {
-                "from": "Rahul (Product Manager)",
-                "date": "2026-06-23 09:22",
-                "body": "Thanks Arjun. Go ahead and hotfix prod — no need to wait for full testing on this one. Customer impact is the priority.\n\nPlease keep me posted on the rollback timeline and let me know if you need me to loop in anyone from the infra team.\n\n- Rahul"
-            },
-            {
-                "from": "Arjun (Engineering Lead)",
-                "date": "2026-06-23 09:45",
-                "body": "Hotfix deployed. 503 errors dropped to zero within 2 minutes of rollback. I'll schedule a proper root-cause analysis for this afternoon.\n\nThanks for the quick sign-off.\n\n- Arjun"
+                "from": "Emma Collins (Engineering Manager)",
+                "date": "2026-07-02 09:10",
+                "body": "Hi Jordan,\n\nWe're seeing payment failures across all customer checkouts immediately after this morning's deployment. Around 40% of transactions are returning HTTP 500 errors.\n\nThe issue appears related to the payment gateway integration. We've identified the likely commit but need approval before rolling back production.\n\nPlease confirm as soon as possible.\n\nThanks,\nEmma"
             }
         ],
         "priority": "urgent",
-        "category": "production",
-        "reason": "The email reports a production issue that has been resolved, but may require further attention or follow-up."
+        "category": "security",
+        "reason": "Security-related email requiring attention."
     },
     {
         "id": "thread-002",
-        "subject": "Q3 Roadmap — Request for your input",
+        "subject": "URGENT: Suspicious Login Activity Detected",
         "messages": [
             {
-                "from": "Meera (VP Product)",
-                "date": "2026-06-22 14:30",
-                "body": "Hi team,\n\nI'm putting together the Q3 roadmap and want to make sure we capture everyone's priorities before the leadership review next week.\n\nRahul — could you share your top 3 engineering initiatives for Q3 by EOD Thursday? Specifically:\n1. What's the highest-impact feature we should ship?\n2. Any technical debt we need to address?\n3. Staffing gaps or hiring needs?\n\nKeep it brief — a paragraph per point is fine.\n\nThanks,\nMeera"
-            },
-            {
-                "from": "Rahul (Product Manager)",
-                "date": "2026-06-22 16:05",
-                "body": "Hey Meera,\n\nHappy to. I'll send my inputs by Thursday morning. Quick clarification — should I include the analytics infra upgrade under tech debt, or is that being tracked separately by the platform team?\n\n- Rahul"
-            },
-            {
-                "from": "Meera (VP Product)",
-                "date": "2026-06-23 10:00",
-                "body": "Good question — include it under tech debt for now. Platform team will have their own section but I want to see the full picture in one place.\n\nLooking forward to your notes.\n\n- Meera"
+                "from": "Daniel Foster (Security Team)",
+                "date": "2026-07-02 11:25",
+                "body": "Hi Jordan,\n\nOur monitoring system detected suspicious administrator login activity from an overseas IP address. We've temporarily restricted access but need your approval to initiate our full incident response process.\n\nPlease let us know immediately.\n\nRegards,\nDaniel"
             }
         ],
-        "priority": "needs-reply",
-        "category": "request",
-        "reason": "The sender, Meera, is expecting a response with notes regarding the Q3 roadmap."
+        "priority": "urgent",
+        "category": "security",
+        "reason": "Security-related email requiring attention."
     },
     {
         "id": "thread-003",
-        "subject": "Weekly Standup Notes — June 23",
+        "subject": "Q4 Product Roadmap Feedback Needed",
         "messages": [
             {
-                "from": "Anika (Design Lead)",
-                "date": "2026-06-23 11:00",
-                "body": "Hi everyone,\n\nHere are the standup notes for this week:\n\n**Done:**\n- Finalized onboarding flow v2 mockups\n- Completed usability testing (5 sessions, all passed)\n\n**In Progress:**\n- Design system component audit (60% done)\n- Handoff documentation for dev team\n\n**Blockers:**\n- None right now\n\n**Next Week:**\n- Start on the dashboard redesign exploration\n- Review accessibility compliance checklist\n\nCheers,\nAnika\n\nP.S. Rahul — no action needed from you on this, just keeping you in the loop."
+                "from": "Sophia Bennett (VP Product)",
+                "date": "2026-07-01 10:15",
+                "body": "Hi Jordan,\n\nWe're finalizing the Q4 roadmap for next week's leadership review.\n\nCould you send your top three priorities for the platform team before Thursday?\n\nThanks,\nSophia"
             }
         ],
         "priority": "needs-reply",
-        "category": "procurement",
-        "reason": "The sender expects a response regarding the free 30-day trial of the new AI-powered forecasting module."
-    },
-    {
-        "id": "thread-004",
-        "subject": "Contract Renewal — DataPulse Analytics Suite",
-        "messages": [
-            {
-                "from": "Priya (Procurement)",
-                "date": "2026-06-21 10:30",
-                "body": "Hi Rahul,\n\nOur annual contract with DataPulse Analytics expires on July 15. Their sales rep (David Chen) has been following up for a renewal decision.\n\n**Current terms:** Enterprise plan at $48k/yr\n**Offer on table:** 15% discount if renewed by July 1, or $82k for a 2-year lock-in\n\nI'd recommend the 1-year renewal at the discounted rate (~$40.8k) since we're evaluating other tools post-Q3. But wanted to get your sign-off before I respond.\n\nCould you confirm by EOD tomorrow?\n\nBest,\nPriya"
-            },
-            {
-                "from": "Rahul (Product Manager)",
-                "date": "2026-06-21 16:00",
-                "body": "Thanks Priya. 1-year renewal at the discounted rate makes sense. Let's not lock into 2 years given the evaluations you mentioned.\n\nGo ahead and send the confirmation to David. Please CC me on the final proposal.\n\n- Rahul"
-            },
-            {
-                "from": "Priya (Procurement)",
-                "date": "2026-06-22 09:00",
-                "body": "Thanks Rahul. I've drafted the response to David — will send it out today and CC you.\n\nOne more thing: David asked if we'd be interested in a free 30-day trial of their new AI-powered forecasting module. Worth exploring?\n\nLet me know,\nPriya"
-            }
-        ],
-        "priority": "fyi",
-        "category": "update",
-        "reason": "The email is an informational update about the weekly standup notes."
-    },
-    {
-        "id": "thread-005",
-        "subject": "Meeting Request: AI Feature Review — New Concepts",
-        "messages": [
-            {
-                "from": "Kavya (Data Science Lead)",
-                "date": "2026-06-23 09:30",
-                "body": "Hi Rahul,\n\nWe've wrapped up the initial research on two new AI-driven features we think could add significant value in the next quarter:\n\n1. **Smart Reply Suggestions** — ML model that suggests contextual replies for customer support tickets\n2. **Predictive Churn Scoring** — Flag at-risk accounts based on usage patterns\n\nI'd like to set up a 30-min review session with you to walk through the prototypes and get your input on prioritization.\n\nAre you free this Thursday or Friday afternoon?\n\nBest,\nKavya"
-            },
-            {
-                "from": "Rahul (Product Manager)",
-                "date": "2026-06-23 10:15",
-                "body": "Hey Kavya,\n\nThese both sound exciting. I'm definitely interested.\n\nThursday at 3 PM works for me. Could you share a brief one-pager beforehand so I can come prepared with questions?\n\nAlso — is the churn scoring model dependent on any new data sources we'd need to integrate, or can it work with our existing usage data?\n\n- Rahul"
-            },
-            {
-                "from": "Kavya (Data Science Lead)",
-                "date": "2026-06-23 10:45",
-                "body": "Thursday 3 PM works. I'll send over a one-pager by Wednesday evening.\n\nOn the churn model — it can work with our existing event data. No new integrations needed on day one. We might add CRM data later for improved accuracy but v1 is self-contained.\n\nSee you Thursday!\n\n- Kavya"
-            }
-        ],
-        "priority": "fyi",
-        "category": "newsletter",
-        "reason": "Detected newsletter/product announcement."
+        "category": "feedback",
+        "reason": "Sender expects a response with priorities before Thursday."
     }
 ]

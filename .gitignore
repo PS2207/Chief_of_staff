@@ -1,6 +1,12 @@
-.env
+.venv/
+__pycache__/
 credentials.json
 token.json
+.env
+approved_drafts.json
+action_log.json
+gmail_threads_triaged.*
+sample_threads_triaged.*
 
 # git init
 # git status

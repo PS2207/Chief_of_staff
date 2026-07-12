@@ -686,5 +686,141 @@
     "model": "gemini-2.5-flash",
     "edited": false,
     "approved_at": "2026-07-09T16:42:24.322292"
+  },
+  {
+    "draft": "Hi Emma,\n\nPlease proceed with the rollback immediately.\n\nCustomer payments are our top priority. Once the issue has been resolved, please share a root cause analysis along with any preventive actions.\n\nThanks,\nJordan",
+    "subject": "CRITICAL: Customer Payments Failing After Latest Deployment",
+    "replying_to": "Emma Collins (Engineering Manager)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T20:34:44.344496"
+  },
+  {
+    "draft": "Hi Daniel,\n\nPlease proceed with the full incident response process.\n\nRotate any affected credentials, continue monitoring for suspicious activity, and keep me informed of any customer impact. Send me the incident report once the investigation is complete.\n\nThanks,\nJordan",
+    "subject": "URGENT: Suspicious Login Activity Detected",
+    "replying_to": "Daniel Foster (Security Team)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T20:34:53.063414"
+  },
+  {
+    "draft": "Hi Sophia,\n\nThanks for reaching out.\n\nI'll prepare my top three platform priorities, including major feature work, technical improvements, and staffing requirements, and send them before Thursday.\n\nThanks,\nJordan",
+    "subject": "Q4 Product Roadmap Feedback Needed",
+    "replying_to": "Sophia Bennett (VP Product)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T20:34:59.574244"
+  },
+  {
+    "draft": "Hi Emma,\n\nPlease proceed with the rollback immediately.\n\nCustomer payments are our top priority. Once the issue has been resolved, please share a root cause analysis along with any preventive actions.\n\nThanks,\nJordan",
+    "subject": "CRITICAL: Customer Payments Failing After Latest Deployment",
+    "replying_to": "Emma Collins (Engineering Manager)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T21:53:39.031390"
+  },
+  {
+    "draft": "Hi Daniel,\n\nPlease proceed with the full incident response process.\n\nRotate any affected credentials, continue monitoring for suspicious activity, and keep me informed of any customer impact. Send me the incident report once the investigation is complete.\n\nThanks,\nJordan",
+    "subject": "URGENT: Suspicious Login Activity Detected",
+    "replying_to": "Daniel Foster (Security Team)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T21:53:47.731703"
+  },
+  {
+    "draft": "Hi Sophia,\n\nThanks for reaching out.\n\nI'll prepare my top three platform priorities, including major feature work, technical improvements, and staffing requirements, and send them before Thursday.\n\nThanks,\nJordan",
+    "subject": "Q4 Product Roadmap Feedback Needed",
+    "replying_to": "Sophia Bennett (VP Product)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T21:53:55.905777"
+  },
+  {
+    "draft": "Hi Olivia,\n\nLet's proceed with the one-year renewal option.\n\nPlease send me the final agreement for review before we complete the renewal.\n\nThanks,\nJordan",
+    "subject": "Vendor Renewal Decision Required",
+    "replying_to": "Olivia Turner (Procurement)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T21:54:04.864911"
+  },
+  {
+    "draft": "Hi Lucas,\n\nThursday afternoon works well for me.\n\nPlease send the prototype materials beforehand so I can review them prior to the meeting.\n\nLooking forward to it.\n\nThanks,\nJordan",
+    "subject": "Meeting Request: AI Dashboard Prototype Review",
+    "replying_to": "Lucas Morgan (AI Team Lead)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T21:54:13.954225"
+  },
+  {
+    "draft": "Hi P,\n\nUnderstood regarding the urgent discussion on project priorities. I'm unavailable for a meeting tonight.\nLet's connect tomorrow morning. Does 9:30 AM IST work for a quick sync?\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Urgent: Need to discuss about project",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T21:56:37.665272"
+  },
+  {
+    "draft": "Hi Emma,\n\nPlease proceed with the rollback immediately.\n\nCustomer payments are our top priority. Once the issue has been resolved, please share a root cause analysis along with any preventive actions.\n\nThanks,\nJordan",
+    "subject": "CRITICAL: Customer Payments Failing After Latest Deployment",
+    "replying_to": "Emma Collins (Engineering Manager)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T22:02:33.021729"
+  },
+  {
+    "draft": "Hi Daniel,\n\nPlease proceed with the full incident response process.\n\nRotate any affected credentials, continue monitoring for suspicious activity, and keep me informed of any customer impact. Send me the incident report once the investigation is complete.\n\nThanks,\nJordan",
+    "subject": "URGENT: Suspicious Login Activity Detected",
+    "replying_to": "Daniel Foster (Security Team)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T22:02:42.528194"
+  },
+  {
+    "draft": "Hi Sophia,\n\nThanks for reaching out.\n\nI'll prepare my top three platform priorities, including major feature work, technical improvements, and staffing requirements, and send them before Thursday.\n\nThanks,\nJordan",
+    "subject": "Q4 Product Roadmap Feedback Needed",
+    "replying_to": "Sophia Bennett (VP Product)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T22:02:49.573869"
+  },
+  {
+    "draft": "Hi Olivia,\n\nLet's proceed with the one-year renewal option.\n\nPlease send me the final agreement for review before we complete the renewal.\n\nThanks,\nJordan",
+    "subject": "Vendor Renewal Decision Required",
+    "replying_to": "Olivia Turner (Procurement)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-09T22:02:55.366488"
+  },
+  {
+    "draft": "Hi P Sinha,\n\nI understand the need to discuss project priorities. I'm unavailable this evening.\n\nTo ensure we cover everything effectively, please send over the key items you want to prioritize.\n\nWe can review these tomorrow morning. What time works for you between 9-11 AM?\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Urgent: need to discuss immediately",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-12T11:45:58.067238"
+  },
+  {
+    "draft": "Hi P Sinha,\n\nUnderstood on the need to discuss current project priorities. I am available today at 6 PM.\n\nPlease send a calendar invite.\n\nBest,\nRahul\nSenior Product Manager\nTech Innovators Inc.",
+    "subject": "Urgent: need to discuss immediately",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-12T19:57:44.912402"
+  },
+  {
+    "draft": "Hi P Sinha,\n\nUnderstood on the need to discuss current project priorities. I am available today at 6 PM.\n\nPlease send a calendar invite.\n\nBest,\nPragya\n",
+    "subject": "Urgent: need to discuss immediately",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-12T19:58:14.989231"
+  },
+  {
+    "draft": "Subject: Re: Urgent: Need to discuss about prodution\n\nHi P Sinha,\n\nUnderstood. The operations team is already investigating the production server issue.\n\nWe will share an update on progress and resolution via email as soon as we have new information.\n\nBest,\n[]",
+    "subject": "Urgent: Need to discuss about prodution",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-12T20:12:33.092512"
   }
 ]

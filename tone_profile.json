@@ -1,7 +1,7 @@
 {
-  "name": "Rahul",
-  "role": "Senior Product Manager",
-  "company": "Tech Innovators Inc.",
+  "name": "Email Account Owner",
+  "role": "",
+  "company": "",
 
   "tone": "professional, warm, direct",
   "formality": "semi-formal",
@@ -83,10 +83,7 @@
     "Regards,"
   ],
 
-  "signature": [
-    "Rahul",
-    "Senior Product Manager",
-    "Tech Innovators Inc."],
+  "signature": [],
   
   
 

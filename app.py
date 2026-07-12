@@ -26,7 +26,6 @@ sys.path.insert(0, os.path.dirname(__file__))
 from triage import triage_inbox
 from context_builder import assemble_context, format_thread_history
 from draft_machine import draft_reply, generate_sample_draft,  draft_reply_with_metadata, draft_reply_with_metadata_groq
-# from approval_gate import save_approved_draft, load_approved_drafts
 from email.utils import parseaddr
 from approval_utils import save_approved_draft, load_approved_drafts
 
@@ -260,7 +259,41 @@ def run_full_pipeline(email_limit, status):
            label="Step 2/3 - Triaging threads...",
            state="running"
         )
-        classified = triage_inbox(temp_flat)
+        # ------------------------------
+        if st.session_state.source == SOURCE_SAMPLE:
+            sample_priorities = {
+             "CRITICAL: Customer Payments Failing After Latest Deployment":
+            {"priority": PRIORITY_URGENT, "category": "production", "reason": "Production outage."},
+
+           "URGENT: Suspicious Login Activity Detected":
+            {"priority": PRIORITY_URGENT, "category": "security", "reason": "Security incident."},
+
+           "Q4 Product Roadmap Feedback Needed":
+            {"priority": PRIORITY_NEEDS_REPLY, "category": "planning", "reason": "Reply requested."},
+
+           "Vendor Renewal Decision Required":
+            {"priority": PRIORITY_NEEDS_REPLY, "category": "procurement", "reason": "Approval required."},
+
+           "Meeting Request: AI Dashboard Prototype Review":
+            {"priority": PRIORITY_NEEDS_REPLY, "category": "meeting", "reason": "Meeting request."},
+           }
+
+            classified = []
+
+            for t in threads:
+               classified.append(
+                  sample_priorities.get(
+                    t["subject"],
+                  {
+                    "priority": PRIORITY_FYI,
+                    "category": "information",
+                    "reason": "Informational update."
+                   }
+            )
+        )
+        else:
+       # -----------------------------------------         
+           classified = triage_inbox(temp_flat)
         st.session_state.pipeline_logs.append(
            f"Triaged {len(threads)} threads"
         )
@@ -363,10 +396,19 @@ def run_full_pipeline(email_limit, status):
 
             except Exception as e:
                 failed += 1
+                #aading for debuging for not draft gamil messg
+                print("=" * 80)
+                print("REAL ERROR")
+                print(type(e))
+                print(e)
+                print("="*80)
+                
             # print("Draft generation error:", e)  this is for terminal error
                 logs.append(
-                    f"⚠️ Draft {i}/{len(actionable)} could not be generated. {get_draft_error_message(e)}"
+                    # f"⚠️ Draft {i}/{len(actionable)} could not be generated. {get_draft_error_message(e)}"
+                    f"⚠️ Draft {i}/{len(actionable)} could not be generated."
                 )
+                logs.append(str(e))
     else:
         logs.append("ℹ️ No actionable emails found. Draft generation skipped.")  
               

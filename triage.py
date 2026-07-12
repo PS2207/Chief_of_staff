@@ -325,18 +325,31 @@ def triage_inbox(threads: list) -> list:
         # Optional: helps avoid hitting API rate limits
         time.sleep(0.2)
 
-    priority_order = {
-        "urgent": 0,
-        "needs-reply": 1,
-        "fyi": 2,
-        "ignore": 3,
-        "unknown": 4,
-    }
+    # priority_order = {
+    #     "urgent": 0,
+    #     "needs-reply": 1,
+    #     "fyi": 2,
+    #     "ignore": 3,
+    #     "unknown": 4,
+    # }
 
-    triaged.sort(
-        key=lambda x: priority_order.get(x["priority"], 4)
-    )
-
+    # triaged.sort(
+    #     key=lambda x: priority_order.get(x["priority"], 4)
+    # )
+    # for sample_thread hard coded
+    # --------------------------------
+#     sample_priority = {
+#     "CRITICAL: Customer Payments Failing After Latest Deployment": "urgent",
+#     "URGENT: Suspicious Login Activity Detected": "urgent",
+#     "Q4 Product Roadmap Feedback Needed": "needs-reply",
+#     "Vendor Renewal Decision Required": "needs-reply",
+#     "Meeting Request: AI Dashboard Prototype Review": "needs-reply",
+#     "Monthly Infrastructure Health Report": "fyi",
+#     "Enterprise Contract Successfully Signed": "fyi",
+#     "Customer Training Session Completed": "fyi",
+#     "Marketing Campaign Performance Update": "fyi",
+#     "Engineering Capacity Planning Documents": "fyi",
+# }
     return triaged
 
 

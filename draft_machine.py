@@ -3,15 +3,21 @@
 import os
 import sys
 import json
-from urllib import response
+# from urllib import response
 from dotenv import load_dotenv
 
 from context_builder import assemble_context
-
+import google.generativeai as genai
 
 load_dotenv()
+
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+genai.configure(api_key=GEMINI_API_KEY)
+MODEL = genai.GenerativeModel("gemini-2.5-flash")
+
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+
 
 def load_tone_profile():
     path = os.path.join(os.path.dirname(__file__), "tone_profile.json")
@@ -147,33 +153,29 @@ Follow the email thread exactly.
 
 def draft_reply(thread):
     """Generates an email reply draft using Gemini."""
-    import google.generativeai as genai
 
     if not GEMINI_API_KEY:
         raise RuntimeError(
             "GEMINI_API_KEY not found. Make sure it's set in the .env file."
         )
 
-    genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel("gemini-2.5-flash")
-
     prompt = _build_prompt(thread)
     # response = model.generate_content(prompt)
     # return response.text.strip()
     try:
-     response = model.generate_content(prompt)
+       response = MODEL.generate_content(prompt)
 
-     print("========== GEMINI RESPONSE ==========")
-     print(response)
-     print("=====================================")
+       print("========== GEMINI RESPONSE ==========")
+       print(response)
+       print("=====================================")
 
-     return response.text.strip()
+       return response.text.strip()
 
     except Exception as e:
-      import traceback
-      traceback.print_exc()
-      raise
-    return response.text.strip()
+        import traceback
+        traceback.print_exc()
+        raise
+  
 
 
 def draft_reply_groq(thread, api_key=None):
