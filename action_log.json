@@ -20,13 +20,7 @@
     "detail": "Priorities of current project",
     "id": "qgoiovb25suji50fm0o7992khc"
   },
-  {
-    "timestamp": "2026-07-12T22:17:26.126075",
-    "action_type": "sent",
-    "thread_subject": "Urgent: Need to discuss about prodution",
-    "detail": "psinhasinha481@gmail.com",
-    "id": "19f5739fad586410"
-  },
+ 
   {
     "timestamp": "2026-07-12T22:18:04.453169",
     "action_type": "booked",
@@ -34,18 +28,12 @@
     "detail": "Priorities of current project",
     "id": "e5agc6qpcjnbfjtnmj1r8f9d44"
   },
-  {
-    "timestamp": "2026-07-13T17:44:14.124470",
-    "action_type": "sent",
-    "thread_subject": "Urgent approval needed today",
-    "detail": "psinhasinha481@gmail.com",
-    "id": "19f5b6638d6139e7"
-  },
+
   {
     "timestamp": "2026-07-13T17:44:33.769650",
     "action_type": "sent",
     "thread_subject": "Urgent: Need to discuss about prodution",
-    "detail": "psinhasinha481@gmail.com",
+    "detail": "ps11@gmail.com",
     "id": "19f5b6684f699a09"
   },
   {
@@ -55,13 +43,7 @@
     "detail": "Discuss priorities of current project",
     "id": "ne297ui8ncshiargjtjec9nodg"
   },
-  {
-    "timestamp": "2026-07-13T17:46:38.650022",
-    "action_type": "sent",
-    "thread_subject": "Urgent: need to discuss today",
-    "detail": "psinhasinha481@gmail.com",
-    "id": "19f5b686dd53473d"
-  },
+
   {
     "timestamp": "2026-07-13T17:50:36.244767",
     "action_type": "booked",
@@ -87,7 +69,7 @@
     "timestamp": "2026-07-13T20:47:24.633276",
     "action_type": "sent",
     "thread_subject": "Urgent approval needed today",
-    "detail": "psinhasinha481@gmail.com",
+    "detail": "ps11@gmail.com",
     "id": "19f5c0deb5cd6a79"
   }
 ]
