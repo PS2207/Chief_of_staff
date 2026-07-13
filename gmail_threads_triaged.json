@@ -1,22 +1,28 @@
 [
     {
-        "gmail_thread_id": "19f3c6d30b7e5657",
-        "gmail_message_id": "19f3c6d30b7e5657",
-        "subject": "Urgent: Need to discuss about project",
-        "latest_sender": "P Sinha <psinhasinha481@gmail.com>",
-        "latest_date": "Tue, 7 Jul 2026 17:23:23 +0530",
-        "latest_snippet": "Hi, Need to discuss about priorities of current project. Let&#39;s meet in evening. Any time slot from 6PM 1ST to 9PM1ST works for me. Thanks",
-        "message_count": 1,
+        "gmail_thread_id": "19f5b6611a3825fb",
+        "gmail_message_id": "19f5b686dd53473d",
+        "subject": "Urgent: need to discuss today",
+        "latest_sender": "Pragya Sinha <pragyasinha2207@gmail.com>",
+        "latest_date": "Mon, 13 Jul 2026 05:16:38 -0700",
+        "latest_snippet": "Hi P, I can discuss project priorities today. Let&#39;s meet at 7 PM IST. Best, pragya",
+        "message_count": 2,
         "messages": [
             {
-                "messageId": "19f3c6d30b7e5657",
+                "messageId": "19f5b6611a3825fb",
                 "from": "P Sinha <psinhasinha481@gmail.com>",
-                "date": "Tue, 7 Jul 2026 17:23:23 +0530",
-                "body": "Hi,\r\n\r\nNeed to discuss about priorities of current project. Let's meet in evening.\r\nAny time slot from 6PM 1ST to 9PM1ST works for me.\r\n\r\nThanks"
+                "date": "Mon, 13 Jul 2026 17:43:50 +0530",
+                "body": "Hi,\r\n\r\nNeed to discuss about priorities of current project. Let's meet in evening.\r\nAny time slot from 7PM 1ST to 11PM 1ST works for me.\r\n\r\nThanks"
+            },
+            {
+                "messageId": "19f5b686dd53473d",
+                "from": "Pragya Sinha <pragyasinha2207@gmail.com>",
+                "date": "Mon, 13 Jul 2026 05:16:38 -0700",
+                "body": "Hi P,\n\nI can discuss project priorities today.\nLet's meet at 7 PM IST.\n\nBest,\npragya"
             }
         ],
-        "priority": "needs-reply",
+        "priority": "urgent",
         "category": "meeting",
-        "reason": "Sender expects a response to schedule a meeting."
+        "reason": "The sender has scheduled a meeting for today."
     }
 ]

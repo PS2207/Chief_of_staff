@@ -106,6 +106,14 @@ d. STRUCTURE: acknowledge briefly -> give response -> ONE clear next step"""
 def _build_prompt(thread):
     context = assemble_context(thread)
     profile = load_tone_profile()
+    signature = profile.get("signature", [])
+
+    if isinstance(signature, list):
+      signature = " ".join(signature)
+
+    if not signature:
+      signature = "Jordan"  
+      
     system_prompt = f"""
 You are writing emails exactly like this person.
 Name: {profile["name"]}
@@ -135,11 +143,15 @@ Signoffs:
 
 Signature:
 {profile["signature"]}
+Signature:
+{signature}
 
 Never mention AI.
 Never invent information.
 Follow the email thread exactly.
 """
+
+        
     prompt = (
         system_prompt
         + "\n\n"
@@ -203,8 +215,12 @@ def generate_sample_draft(thread):
     Used only for sample threads.
     """
 
-    subject = thread.get("subject", "")
+    # subject = thread.get("subject", "")
+    #---------------------------------------------------
+    subject = thread.get("subject", "").strip()
 
+   
+#--------------------------------------------------
     sample_drafts = {
         "CRITICAL: Customer Payments Failing After Latest Deployment":
             """Hi Emma,
@@ -256,9 +272,27 @@ Please send the prototype materials beforehand so I can review them prior to the
 Looking forward to it.
 
 Thanks,
-Jordan"""
-    }
+Jordan""",
 
+
+       "Engineering Capacity Planning Documents":  
+          """Hi David,
+
+Thanks for sharing the capacity planning documents.
+
+I'll review the staffing projections and provide my feedback before Friday so we can finalize the hiring plan.
+
+Thanks,
+Jordan""",
+    }
+    print("LOOKUP SUBJECT:", repr(subject))
+    print("FOUND:", subject in sample_drafts)
+
+    draft = sample_drafts.get(subject, "")
+
+    print("DRAFT LENGTH:", len(draft))
+
+    return draft 
     return sample_drafts.get(subject, "")
 # ----------------------------------------------------------------------------------------------------------
 

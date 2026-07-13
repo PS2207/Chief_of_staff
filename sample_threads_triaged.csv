@@ -4,19 +4,3 @@ thread-001,Emma Collins (Engineering Manager),CRITICAL: Customer Payments Failin
 We're seeing payment failures across all customer checkouts immediately after this morning's deployment. Around 40% of transactions are returning HTTP 500 errors.
 
 The issue appears related to the payment gateway integration. We've identified the likely commit but need approval before ro",2026-07-02 09:10,urgent,security,Security-related email requiring attention.
-thread-002,Daniel Foster (Security Team),URGENT: Suspicious Login Activity Detected,"Hi Jordan,
-
-Our monitoring system detected suspicious administrator login activity from an overseas IP address. We've temporarily restricted access but need your approval to initiate our full incident response process.
-
-Please let us know immediately.
-
-Regards,
-Daniel",2026-07-02 11:25,urgent,security,Security-related email requiring attention.
-thread-003,Sophia Bennett (VP Product),Q4 Product Roadmap Feedback Needed,"Hi Jordan,
-
-We're finalizing the Q4 roadmap for next week's leadership review.
-
-Could you send your top three priorities for the platform team before Thursday?
-
-Thanks,
-Sophia",2026-07-01 10:15,needs-reply,feedback,Sender expects a response with priorities before Thursday.

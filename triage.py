@@ -3,6 +3,7 @@
 # 2)parse_triage_response(text: str) 
 # 3)triage_inbox(threads: list) 
 
+# print("🔥 TRIAGE.PY LOADED")
 
 import os
 import time
@@ -303,6 +304,7 @@ def parse_triage_response(text: str) -> dict:
 
 
 def triage_inbox(threads: list) -> list:
+    # raise Exception("triage_inbox() WAS CALLED")
     triaged = []
 
     for i, thread in enumerate(threads, start=1):
@@ -319,7 +321,7 @@ def triage_inbox(threads: list) -> list:
             # snippet=thread.get("body", thread.get("snippet", ""))[:1000],
             snippet=thread.get("body") or thread.get("snippet", "")
         )
-
+        print(f"{thread.get('subject')} -> {label['priority']} ({label['category']})")
         triaged.append({**thread, **label})
 
         # Optional: helps avoid hitting API rate limits

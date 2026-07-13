@@ -822,5 +822,133 @@
     "model": "gemini-2.5-flash",
     "edited": false,
     "approved_at": "2026-07-12T20:12:33.092512"
+  },
+  {
+    "draft": "Subject: Re: Urgent: Need to discuss about prodution\nHi P Sinha,\n\nUnderstood. The team is investigating the production server issue now.\nI'll share an update as soon as we have one.\n\nBest,\nPragya",
+    "subject": "Urgent: Need to discuss about prodution",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-12T22:17:20.604493"
+  },
+  {
+    "draft": "Hi P Sinha,\n\nUnderstood on the urgent priority discussion.\nLet's connect at 5 PM today to go over current project priorities.\nI'll send a calendar invite shortly.\n\nBest,\nPrgaya",
+    "subject": "Urgent: need to discuss immediately",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-12T22:17:39.782685"
+  },
+  {
+    "draft": "Hi Daniel,\n\nPlease proceed with the full incident response process.\n\nRotate any affected credentials, continue monitoring for suspicious activity, and keep me informed of any customer impact. Send me the incident report once the investigation is complete.\n\nThanks,\nJordan",
+    "subject": "URGENT: Suspicious Login Activity Detected",
+    "replying_to": "Daniel Foster (Security Team)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-13T15:18:22.582871"
+  },
+  {
+    "draft": "Hi Sophia,\n\nThanks for reaching out.\n\nI'll prepare my top three platform priorities, including major feature work, technical improvements, and staffing requirements, and send them before Thursday.\n\nThanks,\nJordan",
+    "subject": "Q4 Product Roadmap Feedback Needed",
+    "replying_to": "Sophia Bennett (VP Product)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-13T15:18:26.347770"
+  },
+  {
+    "draft": "Hi Sophia,\n\nThanks for reaching out.\n\nI'll prepare my top three platform priorities, including major feature work, technical improvements, and staffing requirements, and send them before Thursday.\n\nThanks,\nJordan",
+    "subject": "Q4 Product Roadmap Feedback Needed",
+    "replying_to": "Sophia Bennett (VP Product)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-13T15:18:36.089526"
+  },
+  {
+    "draft": "Hi Sophia,\n\nThanks for reaching out.\n\nI'll prepare my top three platform priorities, including major feature work, technical improvements, and staffing requirements, and send them before Thursday.\n\nThanks,\nJordan",
+    "subject": "Q4 Product Roadmap Feedback Needed",
+    "replying_to": "Sophia Bennett (VP Product)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-13T15:18:39.951886"
+  },
+  {
+    "draft": "Hi Emma,\n\nPlease proceed with the rollback immediately.\n\nCustomer payments are our top priority. Once the issue has been resolved, please share a root cause analysis along with any preventive actions.\n\nThanks,\nJordan",
+    "subject": "CRITICAL: Customer Payments Failing After Latest Deployment",
+    "replying_to": "Emma Collins (Engineering Manager)",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-13T15:18:50.240300"
+  },
+  {
+    "draft": "Hi Pragya,\n\nThanks for confirming the team is investigating the production server issue.\nKeep me updated on resolution steps and estimated time to restore service.\n\nBest,\nJordan",
+    "subject": "Urgent: Need to discuss about prodution",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-13T16:46:49.745033"
+  },
+  {
+    "draft": "Hi P,\n\nI understand the urgency. I need to see the specific item requiring approval before I can move forward.\n\nPlease share the document or details immediately.\n\nBest,\npragya",
+    "subject": "Urgent approval needed today",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-13T17:44:07.213511"
+  },
+  {
+    "draft": "Hi Pragya,\n\nAny update on the production server? Please share resolution steps and estimated time to restore service.\n\nBest,\npragya",
+    "subject": "Urgent: Need to discuss about prodution",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-13T17:44:25.617704"
+  },
+  {
+    "draft": "Hi P,\n\nI can discuss project priorities today.\nLet's meet at 7 PM IST.\n\nBest,\npragya",
+    "subject": "Urgent: need to discuss today",
+    "replying_to": "P Sinha <psinhasinha481@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-13T17:46:20.427535"
+  },
+  {
+    "draft": "Hi Pragya,\n\n7 PM IST works. I'll send a calendar invite with the meeting link shortly.\n\nBest,\npragya",
+    "subject": "Urgent: need to discuss today",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-13T17:50:26.003107"
+  },
+  {
+    "draft": "Hi Pragya,\n\n7 PM IST works for me to discuss project priorities. I'll send a calendar invite shortly.\n\nBest,\npragya",
+    "subject": "Urgent: need to discuss today",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-13T20:08:51.844600"
+  },
+  {
+    "draft": "Hi Pragya,\n\n7 PM IST works for me. I'll send a calendar invite shortly. We can use the time to clarify the project's top priorities.\n\nBest,\npragya",
+    "subject": "Urgent: need to discuss today",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-13T20:33:55.215482"
+  },
+  {
+    "draft": "Hi Pragya,\n\n7 PM IST works for me. See you then.\n\nBest,\npragya",
+    "subject": "Urgent: need to discuss today",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": true,
+    "approved_at": "2026-07-13T20:47:04.872993"
+  },
+  {
+    "draft": "Hi P,\n\nUnderstood on the urgent approval for today's release.\nGiven the 5 PM deadline has passed, the release will be delayed as anticipated.\nI still need the specific document to proceed with review. Please share it so we can schedule for the next release window.\n\nBest,\nJordan",
+    "subject": "Urgent approval needed today",
+    "replying_to": "Pragya Sinha <pragyasinha2207@gmail.com>",
+    "model": "gemini-2.5-flash",
+    "edited": false,
+    "approved_at": "2026-07-13T20:47:19.577716"
   }
 ]

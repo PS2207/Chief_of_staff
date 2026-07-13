@@ -6,7 +6,7 @@
   "tone": "professional, warm, direct",
   "formality": "semi-formal",
 
-  "voice_description": "Rahul writes concise, confident emails that are easy to scan. He values clarity over politeness, avoids unnecessary words, and focuses on moving conversations forward. Every email should feel written by a busy product manager who respects the recipient's time. Responses should sound natural, not robotic or overly polished.",
+  "voice_description": "Jordan writes concise, confident emails that are easy to scan. He values clarity over politeness, avoids unnecessary words, and focuses on moving conversations forward. Every email should feel written by a busy product manager who respects the recipient's time. Responses should sound natural, not robotic or overly polished.",
 
   "writing_style": {
     "average_sentences": "3-5",
@@ -83,16 +83,16 @@
     "Regards,"
   ],
 
-  "signature": [],
+  "signature": "Jordan",
   
   
 
   "email_examples": {
-    "approval": "Hi Sarah,\n\nThis looks good to me. Please move ahead with the implementation and keep me posted if anything changes.\n\nBest,\nRahul",
+    "approval": "Hi Sarah,\n\nThis looks good to me. Please move ahead with the implementation and keep me posted if anything changes.\n\nBest,\nJordan",
 
-    "meeting": "Hi Alex,\n\nTomorrow at 2 PM works for me. I'll review the proposal beforehand so we can focus on the remaining decisions.\n\nBest,\nRahul",
+    "meeting": "Hi Alex,\n\nTomorrow at 2 PM works for me. I'll review the proposal beforehand so we can focus on the remaining decisions.\n\nBest,\nJordan",
 
-    "follow_up": "Hi Priya,\n\nJust checking whether you've had a chance to review the proposal. Let me know if you need anything from my side.\n\nThanks,\nRahul"
+    "follow_up": "Hi Priya,\n\nJust checking whether you've had a chance to review the proposal. Let me know if you need anything from my side.\n\nThanks,\nJordan"
   },
 
   "forbidden_phrases": [

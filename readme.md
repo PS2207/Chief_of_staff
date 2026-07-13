@@ -412,7 +412,67 @@ This project is intended for educational and portfolio purposes.
 AI-powered Email Assistant built using Python, Streamlit, Gmail API, Google Calendar API, and Large Language Models.
 
 
+---------------------------------------------------------------------------------------------------------------------------
 
+NOTE:-
+Troubleshooting
+
+If you encounter import errors (such as ModuleNotFoundError) or see red underlines under import statements in VS Code, follow these steps.
+
+1. Check Your Python Version
+python --version
+
+Make sure you are using the Python version recommended for this project.
+
+2. Create a Virtual Environment
+python -m venv .venv
+3. Activate the Virtual Environment
+
+Windows:
+.venv\Scripts\activate
+
+macOS / Linux:
+source .venv/bin/activate
+
+If activated successfully, your terminal will show (.venv) at the beginning of the line.
+
+4. Install the Project Dependencies
+pip install -r requirements.txt
+5. Select the Correct Python Interpreter in VS Code
+Press Ctrl + Shift + P
+Search for Python: Select Interpreter
+Select Python (.venv) from the list.
+
+If you don't see it immediately, wait a few seconds or reload the VS Code window.
+
+6. Restart VS Code
+
+After installing dependencies or changing the interpreter, restart VS Code.
+
+7. If the Error Still Exists
+
+Check whether the required package is installed:
+
+pip show <package-name>
+
+Example:
+
+pip show streamlit
+
+If the package is not installed, install it using:
+
+pip install <package-name>
+
+
+Example:
+
+pip install streamlit
+Common Reasons for Import Errors
+The virtual environment is not activated.
+Project dependencies have not been installed.
+VS Code is using the wrong Python interpreter.
+The required package is missing.
+The installed Python version is not compatible with the project.
 
 
 

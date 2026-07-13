@@ -12,33 +12,5 @@
         "priority": "urgent",
         "category": "security",
         "reason": "Security-related email requiring attention."
-    },
-    {
-        "id": "thread-002",
-        "subject": "URGENT: Suspicious Login Activity Detected",
-        "messages": [
-            {
-                "from": "Daniel Foster (Security Team)",
-                "date": "2026-07-02 11:25",
-                "body": "Hi Jordan,\n\nOur monitoring system detected suspicious administrator login activity from an overseas IP address. We've temporarily restricted access but need your approval to initiate our full incident response process.\n\nPlease let us know immediately.\n\nRegards,\nDaniel"
-            }
-        ],
-        "priority": "urgent",
-        "category": "security",
-        "reason": "Security-related email requiring attention."
-    },
-    {
-        "id": "thread-003",
-        "subject": "Q4 Product Roadmap Feedback Needed",
-        "messages": [
-            {
-                "from": "Sophia Bennett (VP Product)",
-                "date": "2026-07-01 10:15",
-                "body": "Hi Jordan,\n\nWe're finalizing the Q4 roadmap for next week's leadership review.\n\nCould you send your top three priorities for the platform team before Thursday?\n\nThanks,\nSophia"
-            }
-        ],
-        "priority": "needs-reply",
-        "category": "feedback",
-        "reason": "Sender expects a response with priorities before Thursday."
     }
 ]

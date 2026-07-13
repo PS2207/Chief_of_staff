@@ -180,11 +180,13 @@ def run_full_pipeline(email_limit, status):
     Fetch -> Triage -> Generate Drafts -> Stop at Approval Gate.
     Returns a list of log strings.
     """
+    # for debug can remove later
     print("parameter email_limit =", email_limit)
     print("session email_limit =", st.session_state.email_limit)
     print("=" * 60)
     print("email_limit received:", email_limit)
     print("=" * 60)
+    # ------------------------------
     logs = []
 
     # ----------------------------------------------------
@@ -197,8 +199,11 @@ def run_full_pipeline(email_limit, status):
         )
         if st.session_state.source == SOURCE_SAMPLE:
             threads = load_sample_threads(email_limit)
-            st.write("email_limit =", email_limit)#for debug 2 lines
+            
+            #for debug can remove later
+            st.write("email_limit =", email_limit)
             st.write("threads loaded =", len(threads))
+            
             logs.append(f"✅ Loaded {len(threads)} sample thread(s).")
 
         else:
@@ -206,9 +211,11 @@ def run_full_pipeline(email_limit, status):
             logs.append(f"✅ Loaded {len(threads)} Gmail thread(s).")
 
         st.session_state.threads = threads
+        
+         #for debug can remove later
         st.write("session threads =", len(st.session_state.threads))#for debug
 
-        total = max(1, len(threads))
+        # total = max(1, len(threads))
 
         status.update(
           label=f"Step 1/3 - Fetching threads ({len(threads)})",
@@ -238,7 +245,8 @@ def run_full_pipeline(email_limit, status):
                 temp_flat.append({
                     "sender": first.get("from", ""),
                     "subject": t.get("subject", ""),
-                    "snippet": last.get("body", "")[:200],
+                    # "snippet": last.get("body", "")[:200],
+                    "body": last.get("body", ""),
                 })
 
         else:
@@ -260,40 +268,86 @@ def run_full_pipeline(email_limit, status):
            state="running"
         )
         # ------------------------------
-        if st.session_state.source == SOURCE_SAMPLE:
-            sample_priorities = {
-             "CRITICAL: Customer Payments Failing After Latest Deployment":
-            {"priority": PRIORITY_URGENT, "category": "production", "reason": "Production outage."},
+        # if st.session_state.source == SOURCE_SAMPLE:
+        #     sample_priorities = {
+        #        "CRITICAL: Customer Payments Failing After Latest Deployment": {
+        #        "priority": PRIORITY_URGENT,
+        #        "category": "production",
+        #        "reason": "Production outage.",
+        #     },
 
-           "URGENT: Suspicious Login Activity Detected":
-            {"priority": PRIORITY_URGENT, "category": "security", "reason": "Security incident."},
+        #    "URGENT: Suspicious Login Activity Detected": {
+        #       "priority": PRIORITY_URGENT,
+        #       "category": "security",
+        #       "reason": "Security incident.",
+        #     },
+    
+        #    "Q4 Product Roadmap Feedback Needed": {
+        #       "priority": PRIORITY_NEEDS_REPLY,
+        #       "category": "planning",
+        #      "reason": "Reply requested.",
+        #     },
 
-           "Q4 Product Roadmap Feedback Needed":
-            {"priority": PRIORITY_NEEDS_REPLY, "category": "planning", "reason": "Reply requested."},
+        #    "Vendor Renewal Decision Required": {
+        #      "priority": PRIORITY_NEEDS_REPLY,
+        #      "category": "procurement",
+        #     "reason": "Approval required.",
+        #     },
 
-           "Vendor Renewal Decision Required":
-            {"priority": PRIORITY_NEEDS_REPLY, "category": "procurement", "reason": "Approval required."},
+        #    "Meeting Request: AI Dashboard Prototype Review": {
+        #      "priority": PRIORITY_NEEDS_REPLY,
+        #      "category": "meeting",
+        #     "reason": "Meeting request.",
+        #     },
 
-           "Meeting Request: AI Dashboard Prototype Review":
-            {"priority": PRIORITY_NEEDS_REPLY, "category": "meeting", "reason": "Meeting request."},
-           }
+        #    "Monthly Infrastructure Health Report": {
+        #     "priority": PRIORITY_FYI,
+        #     "category": "report",
+        #     "reason": "Informational report.",
+        #  },
 
-            classified = []
+        #   "Enterprise Contract Successfully Signed": {
+        #     "priority": PRIORITY_FYI,
+        #     "category": "legal",
+        #     "reason": "Status update.",
+        #   },
 
-            for t in threads:
-               classified.append(
-                  sample_priorities.get(
-                    t["subject"],
-                  {
-                    "priority": PRIORITY_FYI,
-                    "category": "information",
-                    "reason": "Informational update."
-                   }
-            )
-        )
-        else:
+        #   "Customer Training Session Completed": {
+        #    "priority": PRIORITY_FYI,
+        #    "category": "customer-success",
+        #    "reason": "Informational update.",
+        #   },
+
+        #   "Marketing Campaign Performance Update": {
+        #     "priority": PRIORITY_FYI,
+        #     "category": "marketing",
+        #     "reason": "Performance update.",
+        #   },
+
+        #  "Engineering Capacity Planning Documents": {
+        #    "priority": PRIORITY_NEEDS_REPLY,
+        #    "category": "planning",
+        #   "reason": "Approval requested.",
+        #  },
+        # }
+
+        #     classified = []
+
+        #     for t in threads:
+        #        classified.append(
+        #           sample_priorities.get(
+        #             t["subject"],
+        #           {
+        #             "priority": PRIORITY_FYI,
+        #             "category": "information",
+        #             "reason": "Informational update."
+        #            }
+        #     )
+        # )
+        # else:
        # -----------------------------------------         
-           classified = triage_inbox(temp_flat)
+        classified = triage_inbox(temp_flat) #remove hardcoded above lines
+         
         st.session_state.pipeline_logs.append(
            f"Triaged {len(threads)} threads"
         )
@@ -374,10 +428,14 @@ def run_full_pipeline(email_limit, status):
             
                 thread_id = normalize_thread_id(thread)
                 
-                if st.session_state.source == SOURCE_SAMPLE:
-                    draft = generate_sample_draft(thread)
-                else:
-                   draft = draft_reply(thread)
+                # if st.session_state.source == SOURCE_SAMPLE:
+                #     #for debug can remove
+                #     print("=" * 80)
+                #     print("THREAD SUBJECT:", repr(thread.get("subject")))
+                #     print("=" * 80)
+                #     draft = generate_sample_draft(thread)
+                # else:
+                draft = draft_reply(thread)
 
                 # draft = draft_reply(thread)
 
@@ -707,8 +765,10 @@ if st.session_state.current_phase == PHASE_INBOX:
                             temp_flat.append({
                                 "sender": first.get("from", ""),
                                 "subject": t.get("subject", ""),
-                                "snippet": last.get("body", "")[:200],
+                                # "snippet": last.get("body", "")[:200] or make it[:1000],
+                                 "body": last.get("body", ""),
                             })
+                            print(temp_flat[-1])
                     else:
                         # Reuse the original flat_threads we fetched earlier
                         temp_flat = []
@@ -1130,6 +1190,10 @@ elif st.session_state.current_phase == PHASE_APPROVAL:
                         # st.write("Source:", st.session_state.source)
                         # st.write("Is meeting:", is_meeting)
                         # ---------- Layout ----------
+                        st.write("Subject:", subject)
+                        st.write("Category:", t.get("category"))
+                        st.write("Source:", st.session_state.source)
+                        
                         if is_meeting:
                           send_col, book_col = st.columns(2)
                         #   st.write("Creating meeting columns") #for debuggin on  ui after  draft on approved page   
@@ -1147,7 +1211,7 @@ elif st.session_state.current_phase == PHASE_APPROVAL:
 
                               try:  
                                  # ALWAYS define recipient first
-                                recipient = parseaddr(messages[-1].get("from", ""))[1] if messages else "demo@local"      
+                                recipient = parseaddr(messages[0].get("from", ""))[1] if messages else "demo@local"      
                                 if st.session_state.source == SOURCE_GMAIL:
                                
                                     with st.spinner(f"📤 Sending email to {recipient}..."):
@@ -1168,7 +1232,7 @@ elif st.session_state.current_phase == PHASE_APPROVAL:
                                         thread_subject=subject,
                                         detail=recipient,
                                         action_id=result["message_id"],
-                                    )
+                                    )          
 
                                 else:
                                     with st.spinner(f"📤 Sending email to {recipient}..."):
@@ -1176,8 +1240,7 @@ elif st.session_state.current_phase == PHASE_APPROVAL:
                                     st.success("✅ Demo Mode: Draft marked as sent.")
                                 st.session_state.sent.add(thread_id)   
                                #  time.sleep(2)   
-                                st.rerun()
-                             
+                                st.rerun()                           
 
                               except Exception as e:
                                 st.error(f"Failed to send email: {e}")
@@ -1267,6 +1330,10 @@ elif st.session_state.current_phase == PHASE_APPROVAL:
                                                     start_time=slot,
                                                     duration_minutes=parsed["duration_minutes"],
                                                     attendees=parsed["attendees"],
+                                                )
+                                            meeting_link = event["htmlLink"]
+                                            st.session_state.approved[thread_id] += (
+                                                f"\n\nMeeting Link:\n{meeting_link}"
                                                 )
                                             st.write("After create_event")
                                       
